@@ -1,0 +1,158 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Mar  7 13:20:39 2021
+
+@author: ASUS
+"""
+
+
+import sys
+from PyQt5 import QtWidgets
+from PyQt5.QtWidgets import (
+    QApplication, 
+    QWidget, 
+    QLabel,
+    QTabWidget,
+    QVBoxLayout,
+    QGridLayout,
+    QWidget,
+)
+
+from PyQt5.QtGui import QDrag, QPixmap, QPainter, QCursor 
+from PyQt5.QtCore import Qt, QMimeData
+
+
+class DragLabel(QLabel):
+    def mousePressEvent(self, event):
+        if event.button() == Qt.LeftButton:
+            self.drag_start_position = event.pos()
+            
+    def mouseMoveEvent(self, event):
+        if not(event.buttons() & Qt.LeftButton):
+            return 
+        else:
+            drag = QDrag(self)
+            
+            mimedata = QMimeData()
+            mimedata.setText(self.text())
+            
+            drag.setMimeData(mimedata)
+            
+            # creating the dragging effect
+            pixmap = QPixmap(self.size()) # label size
+            
+            painter = QPainter(pixmap)
+            painter.drawPixmap(self.rect(),self.grab())
+            painter.end()
+            
+            drag.setPixmap(pixmap)
+            drag.setHotSpot(event.pos())
+            drag.exec_(Qt.CopyAction | Qt.MoveAction)
+            
+class DropLabel(QLabel):
+    def __init__(self, label, parent):
+        super().__init__(label, parent)
+            
+        self.setAcceptDrops(True)
+            
+    def dragEnterEvent(self, event):
+        if event.mimeData().hasText():
+            event.acceptProposedAction()
+    
+    def dropEvent(self, event):
+        pos = event.pos()
+        text = event.mimeData().text()
+        self.setText(text)
+        event.acceptProposedAction()
+        
+        
+class Window(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("Cellexus CellMaker Version 2.0")
+        self.resize(800, 800)
+        
+        # Create a top-level layout
+        layout = QVBoxLayout()
+        self.setLayout(layout)
+        
+        # Create the tab widget with seven tabs
+        tabs = QTabWidget()
+        tabs.addTab(self.mainTabUI(), " Main")
+        tabs.addTab(self.chartsTabUI(), "Charts")
+        tabs.addTab(self.manualLogTabUI(), "Manual Log")
+        tabs.addTab(self.autoLogTabUI(), "Auto Log")
+        tabs.addTab(self.eventsTabUI(), "Events")
+        tabs.addTab(self.commentsTabUI(), "Comments")
+        tabs.addTab(self.recipeTabUI(), "Recipe")
+        layout.addWidget(tabs)
+
+    def mainTabUI(self):
+        """Create the Main page UI."""
+        generalTab = QLabel("Contents of Main Tab")
+        return generalTab
+
+    def chartsTabUI(self):
+        """Create the Charts page UI."""
+        chartsTab = QLabel("Contents of Charts Tab")
+        return chartsTab
+    
+    def manualLogTabUI(self):
+        """Create the Manual Log page UI."""
+        manualLogTab = QLabel("Contents of Manual Log Tab")
+        return manualLogTab
+    
+    def autoLogTabUI(self):
+        """Create the Auto Log page UI."""
+        autoLogTab = QLabel("Contents of Auto Log Tab")
+        return autoLogTab
+    
+    def eventsTabUI(self):
+        """Create the Events page UI."""
+        eventsTab = QLabel("Contents of Events Tab")
+        return eventsTab
+    
+    def commentsTabUI(self):
+        """Create the Comments page UI."""
+        commentsTab = QLabel("Contents of Comments Tab")
+        return commentsTab
+    
+    def recipeTabUI(self):
+        """Create the Recipe page UI."""
+        recipeTab = QWidget()
+        layout = QGridLayout()
+        
+        labelToDrag = DragLabel('Temperature', self)
+        labelToDrag2 = DragLabel('Air Flow', self)
+        labelToDrag3 = DragLabel('O2 Flow', self)
+        labelToDrag4 = DragLabel('pH', self)
+        labelToDrag5 = DragLabel('Dissolved O2', self)
+        labelToDrag6 = DragLabel('Feed Pump', self)
+        
+        labelToDrop = DropLabel('Drop Variable Here', self)
+        
+        layout.addWidget(labelToDrop, 0, 0)
+        layout.addWidget(labelToDrag, 0, 2)
+        layout.addWidget(labelToDrag2, 1, 2)
+        layout.addWidget(labelToDrag3, 2, 2)
+        layout.addWidget(labelToDrag4, 3, 2)
+        layout.addWidget(labelToDrag5, 4, 2)
+        layout.addWidget(labelToDrag6, 5, 2)
+        
+        
+        recipeTab.setLayout(layout)
+        return recipeTab
+ 
+
+def main():
+    if not QtWidgets.QApplication.instance():
+        app = QtWidgets.QApplication(sys.argv)
+    else:
+        app = QtWidgets.QApplication.instance()
+        window = Window()
+        window.show()
+        app.exec_()
+        return main
+
+if __name__ == '__main__':         
+    m = main()
