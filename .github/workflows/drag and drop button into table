@@ -1,0 +1,301 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Mar 20 16:20:17 2021
+
+@author: ASUS
+"""
+
+
+from PyQt5.QtCore import    (Qt, QMimeData)
+from PyQt5.QtGui import     (QStandardItemModel, QStandardItem, 
+                             QDrag, QPixmap, QPainter, QCursor )
+from PyQt5.QtWidgets import (QProxyStyle,QStyleOption,
+                            QTableView, QTableWidget, QTableWidgetItem,
+                            QHeaderView, QItemDelegate, QMainWindow,
+                            QHBoxLayout, QVBoxLayout, QGridLayout,
+                            QWidget, QPushButton, QLabel,
+                            QDialog, QGroupBox, QComboBox,
+                            QDoubleSpinBox, QSpinBox,
+                            QApplication)
+
+# Code for pop-up window when variable is drag and drop into the table
+class rampPopUp(QDialog):
+    # defining the custom pop up winow inherits
+    # default properties from QDialog 
+    def __init__(self):
+        super(rampPopUp, self).__init__()
+        self.rampPopUpUI() # runa nd show the GUI of the window 
+
+    # creating the GUI of thw window
+    def rampPopUpUI(self):
+        
+        """creating main layout for the GroupBox"""
+        # print(content)
+        # self.groupBox = QGroupBox(content)
+        self.groupBox = QGroupBox("Feed Pump")
+        groupBoxLayout = QHBoxLayout()
+        
+        """creating layout for the titles made from labels"""
+        self.labelWidget = QWidget()
+        labelLayout = QVBoxLayout()
+        # creating differnt labels for each porperties
+        self.timeLabel = QLabel("Time into Run (mins)")
+        self.iniValLabel = QLabel("Initial Value")
+        self.finValLabel = QLabel("Final Value")
+        self.rampTypeLabel = QLabel("Ramp Type)")
+        self.rampPeriodLabel = QLabel("Ramp Duration (mins)")
+        self.rampEqnLabel = QLabel("Ramp Equation")
+        
+        # adding labels into labelLayout
+        labelLayout.addWidget(self.timeLabel)
+        labelLayout.addWidget(self.iniValLabel)
+        labelLayout.addWidget(self.finValLabel)
+        labelLayout.addWidget(self.rampTypeLabel)
+        labelLayout.addWidget(self.rampPeriodLabel)
+        labelLayout.addWidget(self.rampEqnLabel)
+        
+        # setting labelLayout to labelWidget
+        self.labelWidget.setLayout(labelLayout)
+        
+        
+        """creating layout for inputing values with ComboBox and SpinBox"""
+        self.valueWidget = QWidget()
+        valueLayout = QVBoxLayout()
+        
+        # Setting up Time SpinBox
+        self.timeBox = QSpinBox()
+        self.timeBox.setSuffix(' mins')
+        self.timeBox.setRange(0, 3600)
+        self.timeBox.valueChanged.connect(self.updateTime)
+        # timeIntoRun = self.timeBox.value()
+        # print(timeIntoRun)
+        
+        # Setting up Initial Value DoubleSpinBox
+        self.iniValBox = QDoubleSpinBox()
+        self.iniValBox.setDecimals(3)
+        self.iniValBox.setRange(0.0, 3600.0)
+        self.iniValBox.setSingleStep(0.5)
+        self.iniValBox.valueChanged.connect(self.updateIniVal)
+        
+        # Setting up Initial Value DoubleSpinBox
+        self.finValBox = QDoubleSpinBox()
+        self.finValBox.setDecimals(3)
+        self.finValBox.setRange(0.0, 3600.0)
+        self.iniValBox.setSingleStep(0.5)
+        self.finValBox.valueChanged.connect(self.updateFinVal)
+        
+        # Setting up Ramp Type ComboBox
+        self.rampTypeBox = QComboBox()
+        self.rampTypeBox.addItems(["Linear", "Exponential"])
+    
+        # Setting up Ramp Period SpinBox
+        self.rampPeriodBox = QSpinBox()
+        self.rampPeriodBox.setSuffix(' mins')
+        self.rampPeriodBox.setRange(0, 3600)
+        self.rampPeriodBox.valueChanged.connect(self.updateRampPeriod)
+        
+        # Setting up label for Ramp Equation 
+        self.rampEqnBox = QLabel("equation")
+        
+        # adding ComboxBox, SpinBox into valueLayout
+        valueLayout.addWidget(self.timeBox)
+        valueLayout.addWidget(self.iniValBox)
+        valueLayout.addWidget(self.finValBox)
+        valueLayout.addWidget(self.rampTypeBox)
+        valueLayout.addWidget(self.rampPeriodBox)
+        valueLayout.addWidget(self.rampEqnBox)
+        
+        # setting valueLayout into valueWidget
+        self.valueWidget.setLayout(valueLayout)
+        
+        
+        """add label and value widget into main GroupBox layout"""
+        
+        groupBoxLayout.addWidget(self.labelWidget)
+        groupBoxLayout.addSpacing(50)
+        groupBoxLayout.addWidget(self.valueWidget)
+        
+        
+        # Finally applying layout to GroupBox Widget
+        self.groupBox.setLayout(groupBoxLayout)
+        
+        
+        """Buttons section of Dialog box"""
+        self.confirmButton = QPushButton("Confirm")
+        
+        """"Top layout of Dialog to accomadate GroupBox and Button"""
+        layout = QVBoxLayout()
+        layout.addWidget(self.groupBox)
+        layout.addWidget(self.confirmButton)
+        self.setLayout(layout)
+        
+    # update Time Value everytime any SpinBox button is clicked
+    def updateTime(self, value):
+        global time
+        time = value
+        print("time = ", time)
+        
+    # update Initial Value everytime any SpinBox button is clicked    
+    def updateIniVal(self, value):
+        global iniVal
+        iniVal = value
+        print("Initial Value =", iniVal)
+        
+    # update Final Value everytime any SpinBox button is clicked
+    def updateFinVal(self, value):
+        global finVal
+        finVal = value
+        print("Fianl Value =", finVal)
+        
+    # update Ramp Period value everytime any SpinBox button is clicked
+    def updateRampPeriod(self, value):
+        global rampPeriod
+        rampPeriod = value
+        print("Ramp period =", rampPeriod)
+        
+"""Creating Button for Drag and Drop"""        
+class Button(QPushButton):
+    # defining what happens when button is clicked with mouse
+    def mousePressEvent(self, event):
+        if event.button() == Qt.LeftButton:
+            self.drag_start_position = event.pos()
+            print(self.drag_start_position)
+            
+    # defining what happens when button is moved with mouse    
+    def mouseMoveEvent(self, event):
+        # only works with clicking button with Left button of mouse
+        if not(event.buttons() & Qt.LeftButton):
+            return 
+        else:
+            # start dragging action 
+            drag = QDrag(self)
+            
+            # associating the data stored in clipboard for drag and drop
+            mimeData = QMimeData()
+            mimeData.setText(self.text())
+            
+            drag.setMimeData(mimeData)
+            print(mimeData.text())
+            global content 
+            # making the text of button global to be used in other class
+            content = mimeData.text()
+            
+            # creating a copy of the button to show dragging effect
+            pixmap = QPixmap(self.size()) # label size
+            
+            painter = QPainter(pixmap)
+            painter.drawPixmap(self.rect(),self.grab())
+            painter.end()
+            
+            drag.setPixmap(pixmap)
+            drag.setHotSpot(event.pos())
+            drag.exec_(Qt.CopyAction | Qt.MoveAction)
+            
+"""Creating table on recipe page"""
+class MyTable(QTableWidget):
+    # defining the table to inherit default properties from QTableWidget 
+    def __init__(self, rows, columns, parent):
+        super(MyTable, self).__init__(rows, columns, parent)
+        # setting only second column to accept drop
+        if columns == 1:
+            self.setAcceptDrops(True)
+        
+    # defining the event sent to table widget as dragging action enters it
+    def dragEnterEvent(self, event):
+        if event.mimeData().hasText():
+            event.accept()
+            
+    # defining the event sent to table widget as dragging action enters it            
+    # from https://stackoverflow.com/questions/10264040/how-to-drag-and-drop-into-a-qtablewidget-pyqt
+    def dragMoveEvent(self, event):
+        pos = event.pos()
+        column = self.columnAt(pos.x())
+        print(column)
+        
+        # defining icon shown at cursor depending on the column that the 
+        # cursor moves to to show if that column can accept drops
+        if column == 1:
+           event.acceptProposedAction()
+        else:
+            event.ignore()
+    
+    # defining the event that happens when drop happens
+    # from https://stackoverflow.com/questions/3953001/how-to-insert-data-from-lineedit-to-tablewidget-in-pyqt4
+    def dropEvent(self, event):
+        pos = event.pos()
+        text = event.mimeData().text()
+        row = self.rowAt(pos.y())
+        column = self.columnAt(pos.x())
+        item = QTableWidgetItem(text)
+        
+        # still testing how to implement to open pop up window when text
+        # is "Feed Pump", but for now whatever text will still allow dropping
+        if text == "Feed Pump":
+            self.setItem(row, column, item)
+            event.acceptProposedAction()
+            rampPopUpUI.exec_()
+            
+        else: 
+            self.setItem(row, column, item)
+            event.acceptProposedAction()
+        
+    
+# defining window showing the recipe page 
+class Window(QWidget):
+
+    def __init__(self):
+        super(Window, self).__init__()
+        self.initUI()
+
+    def initUI(self):
+        self.setAcceptDrops(True)
+        
+        # creating buttons fro dropping
+        self.button1 = Button('Temperature', self)
+        self.button2 = Button('Air Pump', self)
+        self.button3 = Button('O2 Pump', self)
+        self.button4 = Button('pH', self)
+        self.button5 = Button('Dissolved O2', self)
+        self.button6 = Button('Feed Pump', self)
+        
+        # setting up table
+        self.table = MyTable(7,7,self)
+        self.table.setHorizontalHeaderLabels(['Time Into Run', 'Variable', 
+       'Initial Value', 'Final Value', 'Ramp Type', 'Ramp Equation', 
+       'Ramp Period'])
+        
+        # setting table to accept drop
+        self.table.setAcceptDrops(True)
+        
+        # setting window title 
+        self.setWindowTitle('Recipe Page')
+
+        # setting window size 
+        self.setGeometry(300, 300, 1300, 450)
+        
+        # arranging table and buttons on the page
+        self.butWidget = QWidget()
+        butLayout = QVBoxLayout()
+        butLayout.addWidget(self.button1)
+        butLayout.addWidget(self.button2)
+        butLayout.addWidget(self.button3)
+        butLayout.addWidget(self.button4)
+        butLayout.addWidget(self.button5)
+        butLayout.addWidget(self.button6)
+        self.butWidget.setLayout(butLayout)
+        
+        layout = QHBoxLayout()
+        layout.addWidget(self.table)
+        layout.addWidget(self.butWidget)
+        self.setLayout(layout)
+
+
+
+if __name__ == "__main__":
+    import sys
+   
+    app = QApplication(sys.argv)
+    window = Window()
+    
+    window.show()
+    sys.exit(app.exec_())
