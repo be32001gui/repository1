@@ -21,6 +21,7 @@ class Ui_MainWindow(QDialog):
         self.widget = PlotWidget(self.centralwidget)
         self.widget.setGeometry(QtCore.QRect(20, 30, 611, 381))
         self.widget.setObjectName("widget")
+        self.widget.setBackground('w')
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton.setGeometry(QtCore.QRect(660, 430, 112, 34))
         self.pushButton.setObjectName("pushButton")
@@ -92,13 +93,13 @@ class Ui_MainWindow(QDialog):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.pushButton.setText(_translate("MainWindow", "Export"))
         self.buttonclear.setText(_translate("MainWindow", "Clear"))
-        self.checkBoxTemp.setText(_translate("MainWindow", "Temperature"))
-        self.checkBoxPres.setText(_translate("MainWindow", "Pressure"))
-        self.checkBoxPH.setText(_translate("MainWindow", "pH"))
-        self.checkBoxDO2.setText(_translate("MainWindow", "dO2"))
-        self.checkBoxAIR.setText(_translate("MainWindow", "Airflow"))
-        self.checkBoxO2.setText(_translate("MainWindow", "O2 Flow"))
-        self.checkBoxCO2.setText(_translate("MainWindow", "CO2 Flow"))
+        self.checkBoxTemp.setText(_translate("MainWindow", "Temperature - Red"))
+        self.checkBoxPres.setText(_translate("MainWindow", "Pressure - Orange"))
+        self.checkBoxPH.setText(_translate("MainWindow", "pH - Yellow"))
+        self.checkBoxDO2.setText(_translate("MainWindow", "dO2 - Green"))
+        self.checkBoxAIR.setText(_translate("MainWindow", "Airflow - Blue"))
+        self.checkBoxO2.setText(_translate("MainWindow", "O2 Flow - Purple"))
+        self.checkBoxCO2.setText(_translate("MainWindow", "CO2 Flow - Pink"))
         self.menuCharts.setTitle(_translate("MainWindow", "Charts"))
         
     def browsefiles(self):
@@ -138,37 +139,44 @@ class Ui_MainWindow(QDialog):
         if self.checkBoxTemp.isChecked():
             x=[1,2,3]
             y=[2,3,4]
-            self.widget.plot(x, y)
+            pen = pg.mkPen(color=(255, 0, 0), width=3)
+            self.widget.plot(x, y, pen=pen)
             
         if self.checkBoxPres.isChecked():
             x=[2,3,4]
             y=[2,3,4]
-            self.widget.plot(x, y)
+            pen = pg.mkPen(color=(255, 155, 55), width=3)
+            self.widget.plot(x, y, pen=pen)
             
         if self.checkBoxPH.isChecked():
             x=[3,4,5]
             y=[2,3,4]
-            self.widget.plot(x, y) 
+            pen = pg.mkPen(color=(255, 255, 0), width=3)
+            self.widget.plot(x, y, pen=pen) 
             
         if self.checkBoxDO2.isChecked():
             x=[4,5,6]
             y=[2,3,4]
-            self.widget.plot(x, y)    
+            pen = pg.mkPen(color=(100, 200, 50), width=3)
+            self.widget.plot(x, y, pen=pen)    
          
         if self.checkBoxAIR.isChecked():
             x=[5,6,7]
             y=[2,3,4]
-            self.widget.plot(x, y) 
+            pen = pg.mkPen(color=(0, 0, 255), width=3)
+            self.widget.plot(x, y, pen=pen) 
             
         if self.checkBoxO2.isChecked():
             x=[6,7,8]
             y=[2,3,4]
-            self.widget.plot(x, y) 
+            pen = pg.mkPen(color=(200, 0, 255), width=3)
+            self.widget.plot(x, y, pen=pen) 
             
         if self.checkBoxCO2.isChecked():
             x=[7,8,9]
             y=[2,3,4]
-            self.widget.plot(x, y)
+            pen = pg.mkPen(color=(248, 24, 148), width=3)
+            self.widget.plot(x, y, pen=pen)
             
           
         
