@@ -217,8 +217,9 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.Run.setFlat(True)
         self.Run.setObjectName("Run")
         #button icon set
-        self.Run.setIcon(QtGui.QIcon('image\button_off.png'))###set icon need\ set picture need/
-        self.Run.setIconSize(QtCore.QSize(90,25))##
+        self.Run.setStyleSheet("QPushButton{border-image: url(image/button_off.png)}")##
+        # self.Run.setIcon(QtGui.QIcon('image\button_off.png'))###set icon need\ set picture need/
+        # self.Run.setIconSize(QtCore.QSize(120,35))##
         
         self.horizontalLayout_3.addWidget(self.Run)
         self.horizontalLayout.addWidget(self.modeBox)
@@ -227,7 +228,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         
         #main picture
         self.Bioreactor_pic = QtWidgets.QLabel(self.Main)
-        self.Bioreactor_pic.setGeometry(QtCore.QRect(200, 170, 950, 550))#50->250 adjust the position
+        self.Bioreactor_pic.setGeometry(QtCore.QRect(200, 170, 950, 550))#50->200 adjust the position
         self.Bioreactor_pic.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.Bioreactor_pic.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.Bioreactor_pic.setObjectName("Bioreactor_pic")
@@ -436,34 +437,36 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         
         #acid button
         self.acid_button = QtWidgets.QPushButton(self.AutopHFrame)
-        self.acid_button.setMinimumSize(QtCore.QSize(90, 25))
+        self.acid_button.setMinimumSize(QtCore.QSize(90, 30))##
         font = QtGui.QFont()
         font.setFamily("Arial")
         self.acid_button.setFont(font)
-        self.acid_button.setStyleSheet("background-color:rgba(255,255,255,133);border-color:rgba(0,0,0,255);color: rgba(0, 0, 0,255);border-style:solid;border-width:1px;border-radius:2px;")
+        #self.acid_button.setStyleSheet("background-color:rgba(255,255,255,133);border-color:rgba(0,0,0,255);color: rgba(0, 0, 0,255);border-style:solid;border-width:1px;border-radius:2px;")
         self.acid_button.setCheckable(True)
         self.acid_button.setAutoRepeat(True)
         self.acid_button.setAutoDefault(True)
         self.acid_button.setObjectName("acid_button")
         #button icon set
-        self.acid_button.setIcon(QtGui.QIcon('image\button_off.png'))###set icon need\ set picture need/
-        self.acid_button.setIconSize(QtCore.QSize(90,25))##
+        self.acid_button.setStyleSheet("QPushButton{border-image: url(image/button_off.png)}")##
+        # self.acid_button.setIcon(QtGui.QIcon('image\button_off.png'))###set icon need\ set picture need/
+        # self.acid_button.setIconSize(QtCore.QSize(90,25))##
         self.gridLayout_2.addWidget(self.acid_button, 1, 0, 1, 1)
         
         #base button
         self.base_button = QtWidgets.QPushButton(self.AutopHFrame)
-        self.base_button.setMinimumSize(QtCore.QSize(90, 25))
+        self.base_button.setMinimumSize(QtCore.QSize(90, 30))##
         font = QtGui.QFont()
         font.setFamily("Arial")
         self.base_button.setFont(font)
-        self.base_button.setStyleSheet("background-color:rgba(255,255,255,133);border-color:rgba(0,0,0,255);color: rgba(0, 0, 0,255);border-style:solid;border-width:1px;border-radius:2px;")
+        #self.base_button.setStyleSheet("background-color:rgba(255,255,255,133);border-color:rgba(0,0,0,255);color: rgba(0, 0, 0,255);border-style:solid;border-width:1px;border-radius:2px;")
         self.base_button.setCheckable(True)
         self.base_button.setAutoRepeat(True)
         self.base_button.setAutoDefault(True)
         self.base_button.setObjectName("base_button")
         #button icon set
-        self.base_button.setIcon(QtGui.QIcon('image\button_off.png'))###set icon need\ set picture need/
-        self.base_button.setIconSize(QtCore.QSize(90,25))##
+        self.base_button.setStyleSheet("QPushButton{border-image: url(image/button_off.png)}")##
+        # self.base_button.setIcon(QtGui.QIcon('image\button_off.png'))###set icon need\ set picture need/
+        # self.base_button.setIconSize(QtCore.QSize(90,25))##
         self.gridLayout_2.addWidget(self.base_button, 2, 0, 1, 1)
         
         
@@ -871,9 +874,9 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.gridLayout_9.addWidget(self.DosingBox, 0, 0, 1, 2)
         self.Automatic_Pump.addItem(self.Acid_Base_Pump, "")
         
-#pic comment
+#pic comment(acid and base time)
         self.formLayoutWidget = QtWidgets.QWidget(self.Main)
-        self.formLayoutWidget.setGeometry(QtCore.QRect(540, 250, 190, 291))##
+        self.formLayoutWidget.setGeometry(QtCore.QRect(640, 295, 170, 210))##
         self.formLayoutWidget.setObjectName("formLayoutWidget")
         self.formLayout = QtWidgets.QFormLayout(self.formLayoutWidget)
         self.formLayout.setContentsMargins(0, 0, 0, 0)
@@ -914,7 +917,8 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.Bioreactor_pic_base.setAutoExclusive(False)
         self.Bioreactor_pic_base.setObjectName("Bioreactor_pic_base")
         self.formLayout.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.Bioreactor_pic_base)
-        spacerItem8 = QtWidgets.QSpacerItem(20, 100, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        #space between base and heating
+        spacerItem8 = QtWidgets.QSpacerItem(20, 85, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)##100->85
         self.formLayout.setItem(4, QtWidgets.QFormLayout.FieldRole, spacerItem8)
         self.Bioreactor_pic_heating = QtWidgets.QRadioButton(self.formLayoutWidget)
         font = QtGui.QFont()
@@ -951,10 +955,13 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.base_time.setCalendarPopup(False)
         self.base_time.setObjectName("base_time")
         self.formLayout.setWidget(3, QtWidgets.QFormLayout.LabelRole, self.base_time)
-        spacerItem9 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.formLayout.setItem(2, QtWidgets.QFormLayout.FieldRole, spacerItem9)
-        spacerItem10 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        #spacerItem9 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        #self.formLayout.setItem(2, QtWidgets.QFormLayout.FieldRole, spacerItem9)
+        
+        #space between heating and cooling
+        spacerItem10 = QtWidgets.QSpacerItem(20, 35, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)##
         self.formLayout.setItem(6, QtWidgets.QFormLayout.FieldRole, spacerItem10)
+        
         self.verticalLayoutWidget_2 = QtWidgets.QWidget(self.Main)
         self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(1150, 380, 131, 271))
         self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
@@ -1232,7 +1239,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.tab1.addTab(self.Charts, "")
         
         #"Ellie's code here"
-        self.verticalLayoutWidget = QtWidgets.QWidget(self.tab)
+        self.verticalLayoutWidget = QtWidgets.QWidget(self.Charts)
         self.verticalLayoutWidget.setGeometry(QtCore.QRect(1320, 20, 181, 401))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
@@ -1267,30 +1274,29 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.checkBoxCO2.setObjectName("checkBoxCO2")
         self.checkBoxCO2.stateChanged.connect(self.checked_item)
         self.verticalLayout.addWidget(self.checkBoxCO2)
-        self.widget1 = PlotWidget(self.tab)
+        self.widget1 = PlotWidget(self.Charts)
         self.widget1.setGeometry(QtCore.QRect(60, 30, 1201, 651))
         self.widget1.setObjectName("widget")
         self.widget1.setBackground('w')
-        self.horizontalScrollBar = QtWidgets.QScrollBar(self.tab)
+        self.horizontalScrollBar = QtWidgets.QScrollBar(self.Charts)
         self.horizontalScrollBar.setGeometry(QtCore.QRect(60, 700, 1191, 20))
         self.horizontalScrollBar.setOrientation(QtCore.Qt.Horizontal)
         self.horizontalScrollBar.setObjectName("horizontalScrollBar")
-        self.pushButton = QtWidgets.QPushButton(self.tab)
+        self.pushButton = QtWidgets.QPushButton(self.Charts)
         self.pushButton.setGeometry(QtCore.QRect(1360, 550, 112, 34))
         self.pushButton.setObjectName("pushButton")
         self.pushButton.clicked.connect(self.browsefiles)  
-        self.pushButton_2 = QtWidgets.QPushButton(self.tab)
+        self.pushButton_2 = QtWidgets.QPushButton(self.Charts)
         self.pushButton_2.setGeometry(QtCore.QRect(1360, 630, 112, 34))
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_2.clicked.connect(self.cleargraph)  
-        self.verticalScrollBar = QtWidgets.QScrollBar(self.tab)
+        self.verticalScrollBar = QtWidgets.QScrollBar(self.Charts)
         self.verticalScrollBar.setGeometry(QtCore.QRect(1280, 30, 20, 641))
         self.verticalScrollBar.setOrientation(QtCore.Qt.Vertical)
         self.verticalScrollBar.setObjectName("verticalScrollBar")
-        self.tabWidget.addTab(self.tab, "")
-        #
         
-        #manual log tab
+        
+ #manual log tab
         self.Manual_Log = QtWidgets.QWidget()
         self.Manual_Log.setObjectName("Manual_Log")        
         self.tab1.addTab(self.Manual_Log, "")
@@ -2145,14 +2151,13 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
     def buttonon(self):
         #on picture when cilcked it
         button=self.sender()##sender() is used to judge which button was clicked
-        button.setIcon(QtGui.QIcon('image\button_on.png'))##
-        button.setIconSize(QtCore.QSize(90,25))##
-        
+        button.setStyleSheet("QPushButton{border-image: url(image/button_on.png)}")##
+       
     def buttonoff(self):
         #off picture when clicked it again
         button=self.sender()
-        button.setIcon(QtGui.QIcon('image\button_off.png'))##
-        button.setIconSize(QtCore.QSize(90,25))##   
+        button.setStyleSheet("QPushButton{border-image: url(image/button_off.png)}")##
+        
                
     def bticon(self,pressed):
         # when push the button
