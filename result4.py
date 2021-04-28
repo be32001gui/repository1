@@ -12,6 +12,11 @@ import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import QPixmap
 import os.path
+import matplotlib
+matplotlib.use('QT5Agg')
+import matplotlib.pyplot as plt 
+import pyqtgraph as pg
+from pyqtgraph import PlotWidget
 
 CURRENT_DIRECTORY = os.path.dirname(os.path.realpath(__file__))
 red = os.path.join(CURRENT_DIRECTORY, "image/red.jpg")
