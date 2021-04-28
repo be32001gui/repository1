@@ -1102,7 +1102,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         
 #minmax limit comment
         self.gridLayoutWidget = QtWidgets.QWidget(self.Main)
-        self.gridLayoutWidget.setGeometry(QtCore.QRect(120, 445, 280, 250))##
+        self.gridLayoutWidget.setGeometry(QtCore.QRect(120, 448, 280, 250))##
         self.gridLayoutWidget.setObjectName("gridLayoutWidget")
         self.gridLayout_4 = QtWidgets.QGridLayout(self.gridLayoutWidget)
         self.gridLayout_4.setContentsMargins(0, 0, 0, 0)
@@ -2029,8 +2029,8 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.AutoDO_gasswitch.clicked[bool].connect(self.swicon)#form->self, link to the change function
         self.FeedPump_switch.clicked[bool].connect(self.swicon)#form->self, link to the change function
         self.Dosing_switch.clicked[bool].connect(self.swicon)#form->self, link to the change function
-        #self.acid_button.clicked.connect(Cellexus_CellMaker.switchit)
-        #self.base_button.clicked.connect(Cellexus_CellMaker.switchit)
+        
+        
         QtCore.QMetaObject.connectSlotsByName(Cellexus_CellMaker)
         
         
