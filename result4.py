@@ -962,8 +962,9 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         spacerItem10 = QtWidgets.QSpacerItem(20, 35, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)##
         self.formLayout.setItem(6, QtWidgets.QFormLayout.FieldRole, spacerItem10)
         
+#pic comment (pH pO2...)        
         self.verticalLayoutWidget_2 = QtWidgets.QWidget(self.Main)
-        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(1150, 380, 131, 271))
+        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(1150, 400, 131, 315))##380->400
         self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
@@ -1041,8 +1042,11 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.biopic_tempvalue.setDecimals(3)
         self.biopic_tempvalue.setObjectName("biopic_tempvalue")
         self.verticalLayout_4.addWidget(self.biopic_tempvalue)
-        spacerItem13 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        
+        #space between temperature and pressure
+        spacerItem13 = QtWidgets.QSpacerItem(20, 90, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)##
         self.verticalLayout_4.addItem(spacerItem13)
+        
         self.biopic_pressurelabel = QtWidgets.QLabel(self.verticalLayoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("Arial")
