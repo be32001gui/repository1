@@ -1102,11 +1102,14 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         
 #minmax limit comment
         self.gridLayoutWidget = QtWidgets.QWidget(self.Main)
-        self.gridLayoutWidget.setGeometry(QtCore.QRect(120, 448, 280, 250))##
+        self.gridLayoutWidget.setGeometry(QtCore.QRect(120, 455, 280, 290))##
         self.gridLayoutWidget.setObjectName("gridLayoutWidget")
         self.gridLayout_4 = QtWidgets.QGridLayout(self.gridLayoutWidget)
         self.gridLayout_4.setContentsMargins(0, 0, 0, 0)
+        #self.gridLayout_4.
         self.gridLayout_4.setObjectName("gridLayout_4")
+        
+        #O2minmaxflow_value box
         self.O2minmaxflow_value = QtWidgets.QDoubleSpinBox(self.gridLayoutWidget)
         self.O2minmaxflow_value.setMinimumSize(QtCore.QSize(90, 30))
         font = QtGui.QFont()
@@ -1123,7 +1126,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.O2minmaxflow_value.setButtonSymbols(QtWidgets.QAbstractSpinBox.NoButtons)
         self.O2minmaxflow_value.setDecimals(3)
         self.O2minmaxflow_value.setObjectName("O2minmaxflow_value")
-        self.gridLayout_4.addWidget(self.O2minmaxflow_value, 1, 2, 1, 1)
+        self.gridLayout_4.addWidget(self.O2minmaxflow_value, 1, 2, 1, 1)##
         
         #Airlimit_button
         self.Airlimit_button = QtWidgets.QPushButton(self.gridLayoutWidget)
@@ -1137,7 +1140,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.Airlimit_button.setFlat(True)
         self.Airlimit_button.setObjectName("Airlimit_button")
         self.Airlimit_button.setStyleSheet("QPushButton{border-image: url(image/button_off.png)}")##
-        self.gridLayout_4.addWidget(self.Airlimit_button, 3, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.Airlimit_button, 4, 0, 1, 1)##
         
         #othergas_button
         self.othergas_button = QtWidgets.QPushButton(self.gridLayoutWidget)
@@ -1151,7 +1154,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.othergas_button.setFlat(True)
         self.othergas_button.setObjectName("othergas_button")
         self.othergas_button.setStyleSheet("QPushButton{border-image: url(image/button_off.png)}")##
-        self.gridLayout_4.addWidget(self.othergas_button, 5, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.othergas_button, 6, 0, 1, 1)##
         
         #N2_button
         self.N2_button = QtWidgets.QPushButton(self.gridLayoutWidget)
@@ -1165,7 +1168,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.N2_button.setFlat(True)
         self.N2_button.setObjectName("N2_button")
         self.N2_button.setStyleSheet("QPushButton{border-image: url(image/button_off.png)}")##
-        self.gridLayout_4.addWidget(self.N2_button, 6, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.N2_button, 8, 0, 1, 1)##
         
         #O2flow_label
         self.O2flow_label = QtWidgets.QLabel(self.gridLayoutWidget)
@@ -1175,7 +1178,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.O2flow_label.setFont(font)
         self.O2flow_label.setAlignment(QtCore.Qt.AlignCenter)
         self.O2flow_label.setObjectName("O2flow_label")
-        self.gridLayout_4.addWidget(self.O2flow_label, 0, 2, 1, 1)
+        self.gridLayout_4.addWidget(self.O2flow_label, 0, 2, 1, 1)##
         
         #O2limit_button
         self.O2limit_button = QtWidgets.QPushButton(self.gridLayoutWidget)
@@ -1189,7 +1192,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.O2limit_button.setFlat(True)
         self.O2limit_button.setObjectName("O2limit_button")
         self.O2limit_button.setStyleSheet("QPushButton{border-image: url(image/button_off.png)}")##
-        self.gridLayout_4.addWidget(self.O2limit_button, 1, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.O2limit_button, 1, 0, 1, 1)##
         
         #Air_MinMaxlabel
         self.Air_MinMaxlabel = QtWidgets.QLabel(self.gridLayoutWidget)
@@ -1199,7 +1202,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.Air_MinMaxlabel.setFont(font)
         self.Air_MinMaxlabel.setAlignment(QtCore.Qt.AlignCenter)
         self.Air_MinMaxlabel.setObjectName("Air_MinMaxlabel")
-        self.gridLayout_4.addWidget(self.Air_MinMaxlabel, 2, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.Air_MinMaxlabel, 3, 0, 1, 1)##
         
         #Airflow_label
         self.Airflow_label = QtWidgets.QLabel(self.gridLayoutWidget)
@@ -1208,7 +1211,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         font.setFamily("Arial")
         self.Airflow_label.setFont(font)
         self.Airflow_label.setObjectName("Airflow_label")
-        self.gridLayout_4.addWidget(self.Airflow_label, 2, 2, 1, 1)
+        self.gridLayout_4.addWidget(self.Airflow_label, 3, 2, 1, 1)##
         
         #O2minmax_label
         self.O2minmax_label = QtWidgets.QLabel(self.gridLayoutWidget)
@@ -1218,16 +1221,22 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.O2minmax_label.setFont(font)
         self.O2minmax_label.setAlignment(QtCore.Qt.AlignCenter)
         self.O2minmax_label.setObjectName("O2minmax_label")
-        self.gridLayout_4.addWidget(self.O2minmax_label, 0, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.O2minmax_label, 0, 0, 1, 1)##
         
+        ###add three spaces
+        #horizontal
         spacerItem14 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_4.addItem(spacerItem14, 6, 1, 1, 1)
+        self.gridLayout_4.addItem(spacerItem14, 1, 1, 1, 1)
         spacerItem15 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_4.addItem(spacerItem15, 3, 1, 1, 1)
-        spacerItem16 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_4.addItem(spacerItem16, 1, 1, 1, 1)
-        spacerItem17 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_4.addItem(spacerItem17, 5, 1, 1, 1)
+        self.gridLayout_4.addItem(spacerItem15, 4, 1, 1, 1)
+        #vertical
+        spacerItem16 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)##
+        self.gridLayout_4.addItem(spacerItem16, 2, 0, 1, 1)
+        spacerItem17 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)##
+        self.gridLayout_4.addItem(spacerItem17, 5, 0, 1, 1)
+        spacerItem18 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)##
+        self.gridLayout_4.addItem(spacerItem18, 7, 0, 1, 1)
+        ###
         
         self.Airminmaxflow_value = QtWidgets.QDoubleSpinBox(self.gridLayoutWidget)
         self.Airminmaxflow_value.setMinimumSize(QtCore.QSize(90, 30))
@@ -1245,8 +1254,8 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.Airminmaxflow_value.setButtonSymbols(QtWidgets.QAbstractSpinBox.NoButtons)
         self.Airminmaxflow_value.setDecimals(3)
         self.Airminmaxflow_value.setObjectName("Airminmaxflow_value")
-        self.gridLayout_4.addWidget(self.Airminmaxflow_value, 3, 2, 1, 1)
-     
+        self.gridLayout_4.addWidget(self.Airminmaxflow_value, 4, 2, 1, 1)##
+        
         self.cellexuspic = QtWidgets.QLabel(self.Main)
         self.cellexuspic.setGeometry(QtCore.QRect(10, 690, 511, 111))
         self.cellexuspic.setText("")
