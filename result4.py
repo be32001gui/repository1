@@ -2182,7 +2182,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
             
     # other functions in the class here
 
-    def browsefiles(self):
+    def browsefiles_1(self):
         fname = QFileDialog.getSaveFileName(self, 'Open File', 'D:\Documents')  
         
     def cleargraph(self):
