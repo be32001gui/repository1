@@ -228,7 +228,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         
         #main picture
         self.Bioreactor_pic = QtWidgets.QLabel(self.Main)
-        self.Bioreactor_pic.setGeometry(QtCore.QRect(200, 170, 950, 550))#50->200 adjust the position
+        self.Bioreactor_pic.setGeometry(QtCore.QRect(200, 170, 950, 580))#50->200 adjust the position
         self.Bioreactor_pic.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.Bioreactor_pic.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.Bioreactor_pic.setObjectName("Bioreactor_pic")
@@ -876,7 +876,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         
 #pic comment(acid and base time)
         self.formLayoutWidget = QtWidgets.QWidget(self.Main)
-        self.formLayoutWidget.setGeometry(QtCore.QRect(640, 295, 170, 210))##
+        self.formLayoutWidget.setGeometry(QtCore.QRect(640, 305, 170, 210))##
         self.formLayoutWidget.setObjectName("formLayoutWidget")
         self.formLayout = QtWidgets.QFormLayout(self.formLayoutWidget)
         self.formLayout.setContentsMargins(0, 0, 0, 0)
@@ -964,7 +964,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         
 #pic comment (pH pO2...)        
         self.verticalLayoutWidget_2 = QtWidgets.QWidget(self.Main)
-        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(1150, 400, 131, 315))##380->400
+        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(1150, 410, 131, 335))##380->410
         self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
@@ -1099,8 +1099,10 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.device_box.addItem("")
         self.device_box.addItem("")
         self.device_box.addItem("")
+        
+#minmax limit comment        
         self.gridLayoutWidget = QtWidgets.QWidget(self.Main)
-        self.gridLayoutWidget.setGeometry(QtCore.QRect(10, 460, 411, 221))
+        self.gridLayoutWidget.setGeometry(QtCore.QRect(120, 445, 280, 240))##
         self.gridLayoutWidget.setObjectName("gridLayoutWidget")
         self.gridLayout_4 = QtWidgets.QGridLayout(self.gridLayoutWidget)
         self.gridLayout_4.setContentsMargins(0, 0, 0, 0)
