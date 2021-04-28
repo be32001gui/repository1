@@ -8,6 +8,7 @@
 
 from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtWidgets import QDialog, QApplication, QFileDialog
+from PyQt5.uic import loadUi
 
 class Ui_MainWindow(QDialog):
     def setupUi(self, MainWindow):
@@ -32,8 +33,7 @@ class Ui_MainWindow(QDialog):
         self.openFileButton.setObjectName("Open_file")
         
         self.openFileButton.clicked.connect(self.browsefiles) #open file browser
-        def browsefiles(self):
-            fname = QFileDialog.getOpenFileName(self, 'Open File', 'D:\Documents')
+        
         
 #file saving
         self.gridLayoutWidget_2 = QtWidgets.QWidget(self.centralwidget)
@@ -661,10 +661,11 @@ class Ui_MainWindow(QDialog):
         self.mode.setItemText(1, _translate("MainWindow", "Recipe"))
         self.feed_pump_2.setText(_translate("MainWindow", "Feed Pump RPM"))
         self.run.setText(_translate("MainWindow", "RUN"))
-        self.Open_file.setText(_translate("MainWindow", "Open file"))
+        self.openFileButton.setText(_translate("MainWindow", "Open file"))
         self.menuManual_Log.setTitle(_translate("MainWindow", "Manual Log"))
 
-
+    def browsefiles(self):
+            fname = QFileDialog.getOpenFileName(self, 'Open File', 'D:\Documents')
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
