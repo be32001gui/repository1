@@ -1100,9 +1100,9 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.device_box.addItem("")
         self.device_box.addItem("")
         
-#minmax limit comment        
+#minmax limit comment
         self.gridLayoutWidget = QtWidgets.QWidget(self.Main)
-        self.gridLayoutWidget.setGeometry(QtCore.QRect(120, 445, 280, 240))##
+        self.gridLayoutWidget.setGeometry(QtCore.QRect(120, 445, 280, 250))##
         self.gridLayoutWidget.setObjectName("gridLayoutWidget")
         self.gridLayout_4 = QtWidgets.QGridLayout(self.gridLayoutWidget)
         self.gridLayout_4.setContentsMargins(0, 0, 0, 0)
@@ -1112,61 +1112,74 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         font = QtGui.QFont()
         font.setFamily("Arial")
         self.O2minmaxflow_value.setFont(font)
-        self.O2minmaxflow_value.setStyleSheet("background-color:rgba(0,0,0,0);\n"
+        self.O2minmaxflow_value.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "border-color:rgba(111,111,170,255);\n"
 "color: rgba(0, 0, 0,255);\n"
 "border-style:double;\n"
 "border-width:4px;\n"
-"border-radius:8px;")
+"border-radius:8px;")##bg color changed
         self.O2minmaxflow_value.setAlignment(QtCore.Qt.AlignCenter)
         self.O2minmaxflow_value.setReadOnly(True)
         self.O2minmaxflow_value.setButtonSymbols(QtWidgets.QAbstractSpinBox.NoButtons)
         self.O2minmaxflow_value.setDecimals(3)
         self.O2minmaxflow_value.setObjectName("O2minmaxflow_value")
         self.gridLayout_4.addWidget(self.O2minmaxflow_value, 1, 2, 1, 1)
-        self.O2limit_button_2 = QtWidgets.QPushButton(self.gridLayoutWidget)
-        self.O2limit_button_2.setMinimumSize(QtCore.QSize(90, 25))
+        
+        #Airlimit_button
+        self.Airlimit_button = QtWidgets.QPushButton(self.gridLayoutWidget)
+        self.Airlimit_button.setMinimumSize(QtCore.QSize(90, 40))##
         font = QtGui.QFont()
         font.setFamily("Arial")
-        self.O2limit_button_2.setFont(font)
-        self.O2limit_button_2.setCheckable(True)
-        self.O2limit_button_2.setAutoRepeat(True)
-        self.O2limit_button_2.setAutoDefault(True)
-        self.O2limit_button_2.setFlat(True)
-        self.O2limit_button_2.setObjectName("O2limit_button_2")
-        self.gridLayout_4.addWidget(self.O2limit_button_2, 3, 0, 1, 1)
-        self.O2limit_button_4 = QtWidgets.QPushButton(self.gridLayoutWidget)
-        self.O2limit_button_4.setMinimumSize(QtCore.QSize(90, 25))
+        self.Airlimit_button.setFont(font)
+        self.Airlimit_button.setCheckable(True)
+        self.Airlimit_button.setAutoRepeat(True)
+        self.Airlimit_button.setAutoDefault(True)
+        self.Airlimit_button.setFlat(True)
+        self.Airlimit_button.setObjectName("Airlimit_button")
+        self.Airlimit_button.setStyleSheet("QPushButton{border-image: url(image/button_off.png)}")##
+        self.gridLayout_4.addWidget(self.Airlimit_button, 3, 0, 1, 1)
+        
+        #othergas_button
+        self.othergas_button = QtWidgets.QPushButton(self.gridLayoutWidget)
+        self.othergas_button.setMinimumSize(QtCore.QSize(90, 40))##
         font = QtGui.QFont()
         font.setFamily("Arial")
-        self.O2limit_button_4.setFont(font)
-        self.O2limit_button_4.setCheckable(True)
-        self.O2limit_button_4.setAutoRepeat(True)
-        self.O2limit_button_4.setAutoDefault(True)
-        self.O2limit_button_4.setFlat(True)
-        self.O2limit_button_4.setObjectName("O2limit_button_4")
-        self.gridLayout_4.addWidget(self.O2limit_button_4, 5, 0, 1, 1)
-        self.O2limit_button_3 = QtWidgets.QPushButton(self.gridLayoutWidget)
-        self.O2limit_button_3.setMinimumSize(QtCore.QSize(90, 25))
+        self.othergas_button.setFont(font)
+        self.othergas_button.setCheckable(True)
+        self.othergas_button.setAutoRepeat(True)
+        self.othergas_button.setAutoDefault(True)
+        self.othergas_button.setFlat(True)
+        self.othergas_button.setObjectName("othergas_button")
+        self.othergas_button.setStyleSheet("QPushButton{border-image: url(image/button_off.png)}")##
+        self.gridLayout_4.addWidget(self.othergas_button, 5, 0, 1, 1)
+        
+        #N2_button
+        self.N2_button = QtWidgets.QPushButton(self.gridLayoutWidget)
+        self.N2_button.setMinimumSize(QtCore.QSize(90, 40))##
         font = QtGui.QFont()
         font.setFamily("Arial")
-        self.O2limit_button_3.setFont(font)
-        self.O2limit_button_3.setCheckable(True)
-        self.O2limit_button_3.setAutoRepeat(True)
-        self.O2limit_button_3.setAutoDefault(True)
-        self.O2limit_button_3.setFlat(True)
-        self.O2limit_button_3.setObjectName("O2limit_button_3")
-        self.gridLayout_4.addWidget(self.O2limit_button_3, 6, 0, 1, 1)
+        self.N2_button.setFont(font)
+        self.N2_button.setCheckable(True)
+        self.N2_button.setAutoRepeat(True)
+        self.N2_button.setAutoDefault(True)
+        self.N2_button.setFlat(True)
+        self.N2_button.setObjectName("N2_button")
+        self.N2_button.setStyleSheet("QPushButton{border-image: url(image/button_off.png)}")##
+        self.gridLayout_4.addWidget(self.N2_button, 6, 0, 1, 1)
+        
+        #O2flow_label
         self.O2flow_label = QtWidgets.QLabel(self.gridLayoutWidget)
-        self.O2flow_label.setMaximumSize(QtCore.QSize(16777215, 15))
+        self.O2flow_label.setMaximumSize(QtCore.QSize(100, 15))##
         font = QtGui.QFont()
         font.setFamily("Arial")
         self.O2flow_label.setFont(font)
         self.O2flow_label.setAlignment(QtCore.Qt.AlignCenter)
         self.O2flow_label.setObjectName("O2flow_label")
         self.gridLayout_4.addWidget(self.O2flow_label, 0, 2, 1, 1)
+        
+        #O2limit_button
         self.O2limit_button = QtWidgets.QPushButton(self.gridLayoutWidget)
-        self.O2limit_button.setMinimumSize(QtCore.QSize(90, 25))
+        self.O2limit_button.setMinimumSize(QtCore.QSize(90, 40))##
         font = QtGui.QFont()
         font.setFamily("Arial")
         self.O2limit_button.setFont(font)
@@ -1175,30 +1188,38 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.O2limit_button.setAutoDefault(True)
         self.O2limit_button.setFlat(True)
         self.O2limit_button.setObjectName("O2limit_button")
+        self.O2limit_button.setStyleSheet("QPushButton{border-image: url(image/button_off.png)}")##
         self.gridLayout_4.addWidget(self.O2limit_button, 1, 0, 1, 1)
-        self.label_3 = QtWidgets.QLabel(self.gridLayoutWidget)
-        self.label_3.setMaximumSize(QtCore.QSize(16777215, 15))
+        
+        #Air_MinMaxlabel
+        self.Air_MinMaxlabel = QtWidgets.QLabel(self.gridLayoutWidget)
+        self.Air_MinMaxlabel.setMaximumSize(QtCore.QSize(80, 15))##
         font = QtGui.QFont()
         font.setFamily("Arial")
-        self.label_3.setFont(font)
-        self.label_3.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_3.setObjectName("label_3")
-        self.gridLayout_4.addWidget(self.label_3, 2, 0, 1, 1)
-        self.label_4 = QtWidgets.QLabel(self.gridLayoutWidget)
-        self.label_4.setMaximumSize(QtCore.QSize(16777215, 15))
+        self.Air_MinMaxlabel.setFont(font)
+        self.Air_MinMaxlabel.setAlignment(QtCore.Qt.AlignCenter)
+        self.Air_MinMaxlabel.setObjectName("Air_MinMaxlabel")
+        self.gridLayout_4.addWidget(self.Air_MinMaxlabel, 2, 0, 1, 1)
+        
+        #Airflow_label
+        self.Airflow_label = QtWidgets.QLabel(self.gridLayoutWidget)
+        self.Airflow_label.setMaximumSize(QtCore.QSize(100, 15))##
         font = QtGui.QFont()
         font.setFamily("Arial")
-        self.label_4.setFont(font)
-        self.label_4.setObjectName("label_4")
-        self.gridLayout_4.addWidget(self.label_4, 2, 2, 1, 1)
+        self.Airflow_label.setFont(font)
+        self.Airflow_label.setObjectName("Airflow_label")
+        self.gridLayout_4.addWidget(self.Airflow_label, 2, 2, 1, 1)
+        
+        #O2minmax_label
         self.O2minmax_label = QtWidgets.QLabel(self.gridLayoutWidget)
-        self.O2minmax_label.setMaximumSize(QtCore.QSize(16777215, 15))
+        self.O2minmax_label.setMaximumSize(QtCore.QSize(80, 15))##
         font = QtGui.QFont()
         font.setFamily("Arial")
         self.O2minmax_label.setFont(font)
         self.O2minmax_label.setAlignment(QtCore.Qt.AlignCenter)
         self.O2minmax_label.setObjectName("O2minmax_label")
         self.gridLayout_4.addWidget(self.O2minmax_label, 0, 0, 1, 1)
+        
         spacerItem14 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_4.addItem(spacerItem14, 6, 1, 1, 1)
         spacerItem15 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -1207,23 +1228,25 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.gridLayout_4.addItem(spacerItem16, 1, 1, 1, 1)
         spacerItem17 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_4.addItem(spacerItem17, 5, 1, 1, 1)
+        
         self.Airminmaxflow_value = QtWidgets.QDoubleSpinBox(self.gridLayoutWidget)
         self.Airminmaxflow_value.setMinimumSize(QtCore.QSize(90, 30))
         font = QtGui.QFont()
         font.setFamily("Arial")
         self.Airminmaxflow_value.setFont(font)
-        self.Airminmaxflow_value.setStyleSheet("background-color:rgba(0,0,0,0);\n"
+        self.Airminmaxflow_value.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "border-color:rgba(111,111,170,255);\n"
 "color: rgba(0, 0, 0,255);\n"
 "border-style:double;\n"
 "border-width:4px;\n"
-"border-radius:8px;")
+"border-radius:8px;")##bg color changed
         self.Airminmaxflow_value.setAlignment(QtCore.Qt.AlignCenter)
         self.Airminmaxflow_value.setReadOnly(True)
         self.Airminmaxflow_value.setButtonSymbols(QtWidgets.QAbstractSpinBox.NoButtons)
         self.Airminmaxflow_value.setDecimals(3)
         self.Airminmaxflow_value.setObjectName("Airminmaxflow_value")
         self.gridLayout_4.addWidget(self.Airminmaxflow_value, 3, 2, 1, 1)
+     
         self.cellexuspic = QtWidgets.QLabel(self.Main)
         self.cellexuspic.setGeometry(QtCore.QRect(10, 690, 511, 111))
         self.cellexuspic.setText("")
@@ -1995,6 +2018,11 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.Run.clicked[bool].connect(self.bticon)#form->self, link to the change function
         self.acid_button.clicked[bool].connect(self.bticon)#form->self, link to the change function
         self.base_button.clicked[bool].connect(self.bticon)#form->self, link to the change function
+        self.O2limit_button.clicked[bool].connect(self.bticon)#form->self, link to the change function
+        self.Airlimit_button.clicked[bool].connect(self.bticon)#form->self, link to the change function
+        self.N2_button.clicked[bool].connect(self.bticon)#form->self, link to the change function
+        self.othergas_button.clicked[bool].connect(self.bticon)#form->self, link to the change function
+        
         #switch
         self.AutopH_switch.clicked[bool].connect(self.swicon)#form->self, link to the change function
         self.AutoDO_switch.clicked[bool].connect(self.swicon)#form->self, link to the change function
@@ -2081,13 +2109,13 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.device_box.setItemText(0, _translate("Cellexus_CellMaker", "Device 1"))
         self.device_box.setItemText(1, _translate("Cellexus_CellMaker", "Device 2"))
         self.device_box.setItemText(2, _translate("Cellexus_CellMaker", "Device 3"))
-        self.O2limit_button_2.setText(_translate("Cellexus_CellMaker", "Limits"))
-        self.O2limit_button_4.setText(_translate("Cellexus_CellMaker", "Other Gas"))
-        self.O2limit_button_3.setText(_translate("Cellexus_CellMaker", "N2"))
+        self.Airlimit_button.setText(_translate("Cellexus_CellMaker", "Limits"))#
+        self.othergas_button.setText(_translate("Cellexus_CellMaker", "Other Gas"))#
+        self.N2_button.setText(_translate("Cellexus_CellMaker", "N2"))#
         self.O2flow_label.setText(_translate("Cellexus_CellMaker", "O2 Flow (lpm)"))
         self.O2limit_button.setText(_translate("Cellexus_CellMaker", "Limits"))
-        self.label_3.setText(_translate("Cellexus_CellMaker", "Air MinMax"))
-        self.label_4.setText(_translate("Cellexus_CellMaker", "Air Flow (lpm)"))
+        self.Air_MinMaxlabel.setText(_translate("Cellexus_CellMaker", "Air MinMax"))#
+        self.Airflow_label.setText(_translate("Cellexus_CellMaker", "Air Flow (lpm)"))#
         self.O2minmax_label.setText(_translate("Cellexus_CellMaker", "O2 MinMax"))
         self.tab1.setTabText(self.tab1.indexOf(self.Main), _translate("Cellexus_CellMaker", "Main"))
         self.tab1.setTabText(self.tab1.indexOf(self.Charts), _translate("Cellexus_CellMaker", "Charts"))
