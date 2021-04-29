@@ -3218,10 +3218,19 @@ if __name__ == "__main__":
         else :
             ui.pO2_led.setPixmap(grey)
             ui.pO2_led.setScaledContents(True)
-        
-            
+                    
     ALARM(38,39,1,0,1,0,1,2,1,0,1,2)
     
-    sys.exit(app.exec_())
-    os.remove('on.png', 'off.png', 'button_on.png', 'button_off.png', 'bio.png', 'cellexuslogo.png', 'red.jpg', 'grey.jpg') 
+    #delete temporary documents
+    os.remove('on.png')
+    os.remove('off.png')
+    os.remove('button_on.png')
+    os.remove('button_off.png')
+    os.remove('bio.png')
+    os.remove('cellexuslogo.png')
+    os.remove('red.jpg')
+    os.remove('grey.jpg') 
     
+    sys.exit(app.exec_())
+    
+    input("please input any key to exit!")
