@@ -1,4 +1,11 @@
 # -*- coding: utf-8 -*-
+"""
+Created on Thu Apr 29 15:05:05 2021
+
+@author: ASUS
+"""
+
+# -*- coding: utf-8 -*-
 # Created by: PyQt5 UI code generator 5.9.2
 
 from PyQt5 import QtCore, QtGui, QtWidgets
@@ -514,27 +521,27 @@ class recipePage(QWidget):
         
         # creating buttons for dropping
         self.button1 = Button('Temperature', self)
-        self.button1.setStyleSheet("QPushButton{border-image: url(image/button_off.png)}")##
+        self.button1.setStyleSheet("QPushButton{border-image: url(button_off.png)}")##
         self.button1.clicked[bool].connect(self.bticon)#form->self, link to the change function
         self.button1.setMinimumSize(QtCore.QSize(200, 50))
         self.button2 = Button('Air Pump', self)
-        self.button2.setStyleSheet("QPushButton{border-image: url(image/button_off.png)}")##
+        self.button2.setStyleSheet("QPushButton{border-image: url(button_off.png)}")##
         self.button2.clicked[bool].connect(self.bticon)#form->self, link to the change function
         self.button2.setMinimumSize(QtCore.QSize(200, 50))
         self.button3 = Button('O2 Pump', self)
-        self.button3.setStyleSheet("QPushButton{border-image: url(image/button_off.png)}")##
+        self.button3.setStyleSheet("QPushButton{border-image: url(button_off.png)}")##
         self.button3.clicked[bool].connect(self.bticon)#form->self, link to the change function
         self.button3.setMinimumSize(QtCore.QSize(200, 50))
         self.button4 = Button('pH', self)
-        self.button4.setStyleSheet("QPushButton{border-image: url(image/button_off.png)}")##
+        self.button4.setStyleSheet("QPushButton{border-image: url(button_off.png)}")##
         self.button4.clicked[bool].connect(self.bticon)#form->self, link to the change function
         self.button4.setMinimumSize(QtCore.QSize(200, 50))
         self.button5 = Button('Dissolved O2', self)
-        self.button5.setStyleSheet("QPushButton{border-image: url(image/button_off.png)}")##
+        self.button5.setStyleSheet("QPushButton{border-image: url(button_off.png)}")##
         self.button5.clicked[bool].connect(self.bticon)#form->self, link to the change function
         self.button5.setMinimumSize(QtCore.QSize(200, 50))
         self.button6 = Button('Feed Pump', self)
-        self.button6.setStyleSheet("QPushButton{border-image: url(image/button_off.png)}")##
+        self.button6.setStyleSheet("QPushButton{border-image: url(button_off.png)}")##
         self.button6.clicked[bool].connect(self.bticon)#form->self, link to the change function
         self.button6.setMinimumSize(QtCore.QSize(200, 50))
         
@@ -2146,7 +2153,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.title_grid = QtWidgets.QGridLayout(self.gridLayoutWidget_ML) 
         self.title_grid.setContentsMargins(0, 0, 0, 0)
         self.title_grid.setObjectName("title_grid")
-        self.gridLayoutWidget.setStyleSheet("background-color:white;")
+        self.gridLayoutWidget_ML.setStyleSheet("background-color:white;")
         self.date = QtWidgets.QLabel(self.gridLayoutWidget_ML)
         self.date.setObjectName("date")
         self.title_grid.addWidget(self.date, 0, 0, 1, 1)
