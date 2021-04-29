@@ -732,26 +732,28 @@ class recipePage(QWidget):
 class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
     def setupUi(self, Cellexus_CellMaker):
         Cellexus_CellMaker.setObjectName("Cellexus_CellMaker")
-        Cellexus_CellMaker.resize(1700, 950)
-        Cellexus_CellMaker.setMaximumSize(QtCore.QSize(1700, 950))
+        Cellexus_CellMaker.resize(1600, 900)
+        Cellexus_CellMaker.setMaximumSize(QtCore.QSize(1600, 900))
+        Cellexus_CellMaker.setMinimumSize(QtCore.QSize(1600, 900))##
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         Cellexus_CellMaker.setFont(font)
         self.centralwidget = QtWidgets.QWidget(Cellexus_CellMaker)
         self.centralwidget.setObjectName("centralwidget")
         self.tab1 = QtWidgets.QTabWidget(self.centralwidget)
-        self.tab1.setGeometry(QtCore.QRect(10, 10, 1675, 900))
-        self.tab1.setMaximumSize(QtCore.QSize(1675, 900))
+        self.tab1.setGeometry(QtCore.QRect(10, 10, 1575, 850))
+        self.tab1.setMaximumSize(QtCore.QSize(1575, 850))
+        self.tab1.setMinimumSize(QtCore.QSize(1575, 850))##
         font = QtGui.QFont()
-        font.setFamily("Arial")
-        font.setPointSize(10)
+        #font.setFamily("Arial")
+        #font.setPointSize(10)
         self.tab1.setFont(font)
         #self.tab1.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.tab1.setTabShape(QtWidgets.QTabWidget.Rounded)
         self.tab1.setObjectName("tab1")
-        self.Main = QtWidgets.QWidget()
+        self.Main = QtWidgets.QWidget()##
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.Main.setFont(font)
         self.Main.setObjectName("Main")
         self.horizontalLayoutWidget = QtWidgets.QWidget(self.Main)
@@ -761,14 +763,14 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.alarmbox = QtWidgets.QGroupBox(self.horizontalLayoutWidget)
-        self.alarmbox.setMinimumSize(QtCore.QSize(620, 100))
+        self.alarmbox.setMinimumSize(QtCore.QSize(590, 100))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.alarmbox.setFont(font)
         #self.alarmbox.setStyleSheet("background-color: rgb(247, 247, 247);")
         self.alarmbox.setObjectName("alarmbox")
         self.layoutWidget = QtWidgets.QWidget(self.alarmbox)
-        self.layoutWidget.setGeometry(QtCore.QRect(10, 20, 600, 69))
+        self.layoutWidget.setGeometry(QtCore.QRect(10, 20, 577, 69))
         self.layoutWidget.setObjectName("layoutWidget")
         self.gridLayout_3 = QtWidgets.QGridLayout(self.layoutWidget)
         self.gridLayout_3.setContentsMargins(0, 0, 0, 0)
@@ -783,7 +785,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.pO2_alarm.setMinimumSize(QtCore.QSize(90, 0))
         self.pO2_alarm.setMaximumSize(QtCore.QSize(90, 30))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.pO2_alarm.setFont(font)
         self.pO2_alarm.setAlignment(QtCore.Qt.AlignCenter)
         self.pO2_alarm.setObjectName("pO2_alarm")
@@ -792,7 +794,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.Press_alarm.setMinimumSize(QtCore.QSize(90, 0))
         self.Press_alarm.setMaximumSize(QtCore.QSize(90, 30))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.Press_alarm.setFont(font)
         self.Press_alarm.setContextMenuPolicy(QtCore.Qt.NoContextMenu)
         self.Press_alarm.setLayoutDirection(QtCore.Qt.LeftToRight)
@@ -814,10 +816,9 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.gridLayout_3.addWidget(self.pO2_led, 0, 5, 1, 1, QtCore.Qt.AlignHCenter)
         self.Temp_alarm = QtWidgets.QLabel(self.layoutWidget)
         self.Temp_alarm.setMinimumSize(QtCore.QSize(90, 0))
-        self.Temp_alarm.setMaximumSize(QtCore.QSize(120, 30))
+        self.Temp_alarm.setMaximumSize(QtCore.QSize(90, 30))
         font = QtGui.QFont()
-        font.setFamily("Arial")
-        # font.setPointSize(9)
+        #font.setFamily("Arial")
         self.Temp_alarm.setFont(font)
         self.Temp_alarm.setAlignment(QtCore.Qt.AlignCenter)
         self.Temp_alarm.setObjectName("Temp_alarm")
@@ -834,7 +835,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.Airflow_alarm.setMinimumSize(QtCore.QSize(90, 0))
         self.Airflow_alarm.setMaximumSize(QtCore.QSize(90, 30))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.Airflow_alarm.setFont(font)
         self.Airflow_alarm.setAlignment(QtCore.Qt.AlignCenter)
         self.Airflow_alarm.setObjectName("Airflow_alarm")
@@ -843,7 +844,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.O2flow_alarm.setMinimumSize(QtCore.QSize(90, 0))
         self.O2flow_alarm.setMaximumSize(QtCore.QSize(90, 30))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.O2flow_alarm.setFont(font)
         self.O2flow_alarm.setAlignment(QtCore.Qt.AlignCenter)
         self.O2flow_alarm.setObjectName("O2flow_alarm")
@@ -852,7 +853,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.pH_alarm.setMinimumSize(QtCore.QSize(90, 0))
         self.pH_alarm.setMaximumSize(QtCore.QSize(90, 30))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.pH_alarm.setFont(font)
         self.pH_alarm.setAlignment(QtCore.Qt.AlignCenter)
         self.pH_alarm.setObjectName("pH_alarm")
@@ -877,7 +878,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.Mode.setMinimumSize(QtCore.QSize(120, 30))
         self.Mode.setMaximumSize(QtCore.QSize(120, 30))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         font.setPointSize(12)
         self.Mode.setFont(font)
         self.Mode.setAlignment(QtCore.Qt.AlignCenter)
@@ -887,8 +888,8 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.mode_choice.setMinimumSize(QtCore.QSize(120, 30))
         self.mode_choice.setMaximumSize(QtCore.QSize(120, 30))
         font = QtGui.QFont()
-        font.setFamily("Arial")
-        font.setPointSize(10)
+        #font.setFamily("Arial")
+        #font.setPointSize(10)
         self.mode_choice.setFont(font)
         self.mode_choice.setContextMenuPolicy(QtCore.Qt.NoContextMenu)
         self.mode_choice.setLayoutDirection(QtCore.Qt.LeftToRight)
@@ -908,7 +909,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.Run.setMinimumSize(QtCore.QSize(120, 35))
         self.Run.setMaximumSize(QtCore.QSize(100, 35))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         font.setPointSize(12)
         font.setBold(False)
         font.setItalic(False)
@@ -917,7 +918,6 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         
         #run button
         self.Run.setFont(font)
-        self.Run.setStyleSheet("background-color:rgba(255,255,255,133);border-color:rgba(0,0,0,255);color: rgba(0, 0, 0,255);border-style:solid;border-width:1px;border-radius:2px;")
         self.Run.setCheckable(True)
         self.Run.setAutoRepeat(True)
         self.Run.setAutoDefault(True)
@@ -935,7 +935,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         
         #main picture
         self.Bioreactor_pic = QtWidgets.QLabel(self.Main)
-        self.Bioreactor_pic.setGeometry(QtCore.QRect(200, 170, 950, 580))#50->200 adjust the position
+        self.Bioreactor_pic.setGeometry(QtCore.QRect(200, 170, 950, 580))#50->250 adjust the position
         self.Bioreactor_pic.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.Bioreactor_pic.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.Bioreactor_pic.setObjectName("Bioreactor_pic")
@@ -943,7 +943,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.setpointBox = QtWidgets.QGroupBox(self.Main)
         self.setpointBox.setGeometry(QtCore.QRect(1360, 10, 181, 381))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.setpointBox.setFont(font)
         #self.setpointBox.setStyleSheet("background-color: rgb(247, 247, 247);")
         self.setpointBox.setObjectName("setpointBox")
@@ -955,7 +955,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.Temp_SP = QtWidgets.QLabel(self.verticalLayoutWidget)
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.Temp_SP.setFont(font)
         self.Temp_SP.setAlignment(QtCore.Qt.AlignCenter)
         self.Temp_SP.setObjectName("Temp_SP")
@@ -964,7 +964,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.Temp_SPvalue.setMinimumSize(QtCore.QSize(0, 30))
         self.Temp_SPvalue.setMaximumSize(QtCore.QSize(16777215, 30))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.Temp_SPvalue.setFont(font)
         self.Temp_SPvalue.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.Temp_SPvalue.setStyleSheet("QDoubleSpinBox::up-button\n"
@@ -994,7 +994,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.verticalLayout_2.addItem(spacerItem3)
         self.O2flow_SP = QtWidgets.QLabel(self.verticalLayoutWidget)
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.O2flow_SP.setFont(font)
         self.O2flow_SP.setAlignment(QtCore.Qt.AlignCenter)
         self.O2flow_SP.setObjectName("O2flow_SP")
@@ -1003,7 +1003,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.O2flow_SPvalue.setMinimumSize(QtCore.QSize(0, 30))
         self.O2flow_SPvalue.setMaximumSize(QtCore.QSize(16777215, 30))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.O2flow_SPvalue.setFont(font)
         self.O2flow_SPvalue.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.O2flow_SPvalue.setStyleSheet("QDoubleSpinBox::up-button\n"
@@ -1033,7 +1033,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.O2flow_value.setMinimumSize(QtCore.QSize(0, 30))
         self.O2flow_value.setMaximumSize(QtCore.QSize(16777215, 30))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.O2flow_value.setFont(font)
         self.O2flow_value.setStyleSheet("background-color:rgba(0,0,0,0);\n"
 "border-color:rgba(111,111,170,255);\n"
@@ -1051,7 +1051,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.verticalLayout_2.addItem(spacerItem4)
         self.Airflow_SP = QtWidgets.QLabel(self.verticalLayoutWidget)
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.Airflow_SP.setFont(font)
         self.Airflow_SP.setAlignment(QtCore.Qt.AlignCenter)
         self.Airflow_SP.setObjectName("Airflow_SP")
@@ -1059,7 +1059,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.Airflow_SPvalue = QtWidgets.QDoubleSpinBox(self.verticalLayoutWidget)
         self.Airflow_SPvalue.setMinimumSize(QtCore.QSize(0, 30))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.Airflow_SPvalue.setFont(font)
         self.Airflow_SPvalue.setStyleSheet("QDoubleSpinBox::up-button\n"
 " {subcontrol-origin:border;\n"
@@ -1082,7 +1082,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.Airflow_value.setMinimumSize(QtCore.QSize(0, 30))
         self.Airflow_value.setMaximumSize(QtCore.QSize(16777215, 30))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.Airflow_value.setFont(font)
         self.Airflow_value.setStyleSheet("background-color:rgba(0,0,0,0);\n"
 "border-color:rgba(111,111,170,255);\n"
@@ -1100,19 +1100,19 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         
 #automatic pump tool box
         self.Automatic_Pump = QtWidgets.QToolBox(self.Main)
-        self.Automatic_Pump.setGeometry(QtCore.QRect(10, 130, 331, 301))##
+        self.Automatic_Pump.setGeometry(QtCore.QRect(10, 130, 331, 310))##
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.Automatic_Pump.setFont(font)
         self.Automatic_Pump.setStyleSheet("")
         self.Automatic_Pump.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.Automatic_Pump.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.Automatic_Pump.setObjectName("Automatic_Pump")
         self.Automatic_pH = QtWidgets.QWidget()
-        self.Automatic_pH.setGeometry(QtCore.QRect(0, 0, 310, 161))##
+        self.Automatic_pH.setGeometry(QtCore.QRect(0, 0, 310, 171))##
         self.Automatic_pH.setObjectName("Automatic_pH")
         self.AutopHFrame = QtWidgets.QFrame(self.Automatic_pH)
-        self.AutopHFrame.setGeometry(QtCore.QRect(10, 0, 310, 161))##
+        self.AutopHFrame.setGeometry(QtCore.QRect(10, 0, 310, 171))##
         self.AutopHFrame.setStyleSheet("")
         self.AutopHFrame.setObjectName("AutopHFrame")
         self.gridLayout = QtWidgets.QGridLayout(self.AutopHFrame)
@@ -1122,7 +1122,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.pHSP_value = QtWidgets.QDoubleSpinBox(self.AutopHFrame)
         self.pHSP_value.setMinimumSize(QtCore.QSize(90, 25))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.pHSP_value.setFont(font)
         self.pHSP_value.setStyleSheet("QDoubleSpinBox::up-button\n"
 " {subcontrol-origin:border;\n"
@@ -1146,7 +1146,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.acid_button = QtWidgets.QPushButton(self.AutopHFrame)
         self.acid_button.setMinimumSize(QtCore.QSize(90, 30))##
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.acid_button.setFont(font)
         #self.acid_button.setStyleSheet("background-color:rgba(255,255,255,133);border-color:rgba(0,0,0,255);color: rgba(0, 0, 0,255);border-style:solid;border-width:1px;border-radius:2px;")
         self.acid_button.setCheckable(True)
@@ -1163,7 +1163,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.base_button = QtWidgets.QPushButton(self.AutopHFrame)
         self.base_button.setMinimumSize(QtCore.QSize(90, 30))##
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.base_button.setFont(font)
         #self.base_button.setStyleSheet("background-color:rgba(255,255,255,133);border-color:rgba(0,0,0,255);color: rgba(0, 0, 0,255);border-style:solid;border-width:1px;border-radius:2px;")
         self.base_button.setCheckable(True)
@@ -1182,7 +1182,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.pHSP_label = QtWidgets.QLabel(self.AutopHFrame)
         self.pHSP_label.setMinimumSize(QtCore.QSize(90, 25))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.pHSP_label.setFont(font)
         self.pHSP_label.setAlignment(QtCore.Qt.AlignCenter)
         self.pHSP_label.setObjectName("pHSP_label")
@@ -1193,21 +1193,21 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.gridLayout_2.addItem(spacerItem6, 0, 1, 1, 1)
         self.gridLayout.addLayout(self.gridLayout_2, 1, 2, 1, 1)
         self.AutopHBox = QtWidgets.QGroupBox(self.AutopHFrame)
-        self.AutopHBox.setMinimumSize(QtCore.QSize(240, 70))
+        self.AutopHBox.setMinimumSize(QtCore.QSize(240, 80))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.AutopHBox.setFont(font)
         self.AutopHBox.setAlignment(QtCore.Qt.AlignCenter)
         self.AutopHBox.setObjectName("AutopHBox")
         self.horizontalLayoutWidget_2 = QtWidgets.QWidget(self.AutopHBox)
-        self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(80, 20, 121, 41))##
+        self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(80, 20, 121, 51))##
         self.horizontalLayoutWidget_2.setObjectName("horizontalLayoutWidget_2")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_2)
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.AutopH_switchlabel1 = QtWidgets.QLabel(self.horizontalLayoutWidget_2)
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.AutopH_switchlabel1.setFont(font)
         self.AutopH_switchlabel1.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.AutopH_switchlabel1.setObjectName("AutopH_switchlabel1")
@@ -1217,7 +1217,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.AutopH_switch = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.AutopH_switch.setMinimumSize(QtCore.QSize(60, 30))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.AutopH_switch.setFont(font)
         self.AutopH_switch.setStyleSheet("QPushButton\n"
 "{\n"
@@ -1237,7 +1237,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.horizontalLayout_2.addWidget(self.AutopH_switch)
         self.AutopH_switchlabel2 = QtWidgets.QLabel(self.horizontalLayoutWidget_2)
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.AutopH_switchlabel2.setFont(font)
         self.AutopH_switchlabel2.setObjectName("AutopH_switchlabel2")
         self.horizontalLayout_2.addWidget(self.AutopH_switchlabel2)
@@ -1246,30 +1246,30 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         
 #auto DO window
         self.Automatic_DO = QtWidgets.QWidget()
-        self.Automatic_DO.setGeometry(QtCore.QRect(0, 0, 310, 161))##
+        self.Automatic_DO.setGeometry(QtCore.QRect(0, 0, 310, 171))##
         self.Automatic_DO.setObjectName("Automatic_DO")
         self.AutoDOFrame = QtWidgets.QFrame(self.Automatic_DO)
-        self.AutoDOFrame.setGeometry(QtCore.QRect(10, 0, 310, 161))##
+        self.AutoDOFrame.setGeometry(QtCore.QRect(10, 0, 310, 171))##
         self.AutoDOFrame.setStyleSheet("")
         self.AutoDOFrame.setObjectName("AutoDOFrame")
         self.gridLayout_5 = QtWidgets.QGridLayout(self.AutoDOFrame)
         self.gridLayout_5.setObjectName("gridLayout_5")
         self.AutoDOBox = QtWidgets.QGroupBox(self.AutoDOFrame)
-        self.AutoDOBox.setMinimumSize(QtCore.QSize(240, 70))
+        self.AutoDOBox.setMinimumSize(QtCore.QSize(240, 80))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.AutoDOBox.setFont(font)
         self.AutoDOBox.setAlignment(QtCore.Qt.AlignCenter)
         self.AutoDOBox.setObjectName("AutoDOBox")
         self.horizontalLayoutWidget_4 = QtWidgets.QWidget(self.AutoDOBox)
-        self.horizontalLayoutWidget_4.setGeometry(QtCore.QRect(80, 20, 121, 41))##
+        self.horizontalLayoutWidget_4.setGeometry(QtCore.QRect(80, 20, 121, 51))##
         self.horizontalLayoutWidget_4.setObjectName("horizontalLayoutWidget_4")
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_4)
         self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
         self.AutoDO_switchlabel1 = QtWidgets.QLabel(self.horizontalLayoutWidget_4)
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.AutoDO_switchlabel1.setFont(font)
         self.AutoDO_switchlabel1.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.AutoDO_switchlabel1.setObjectName("AutoDO_switchlabel1")
@@ -1294,12 +1294,12 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.horizontalLayout_4.addWidget(self.AutoDO_switch)
         self.AutoDO_switchlabel2 = QtWidgets.QLabel(self.horizontalLayoutWidget_4)
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.AutoDO_switchlabel2.setFont(font)
         self.AutoDO_switchlabel2.setObjectName("AutoDO_switchlabel2")
         self.horizontalLayout_4.addWidget(self.AutoDO_switchlabel2)
         self.layoutWidget1 = QtWidgets.QWidget(self.AutoDOBox)
-        self.layoutWidget1.setGeometry(QtCore.QRect(30, 70, 249, 64))##
+        self.layoutWidget1.setGeometry(QtCore.QRect(30, 70, 249, 74))##
         self.layoutWidget1.setObjectName("layoutWidget1")
         self.gridLayout_6 = QtWidgets.QGridLayout(self.layoutWidget1)
         self.gridLayout_6.setContentsMargins(0, 0, 0, 0)
@@ -1309,7 +1309,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.AutoDO_gaslabel = QtWidgets.QLabel(self.layoutWidget1)
         self.AutoDO_gaslabel.setMinimumSize(QtCore.QSize(90, 25))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.AutoDO_gaslabel.setFont(font)
         self.AutoDO_gaslabel.setAlignment(QtCore.Qt.AlignCenter)
         self.AutoDO_gaslabel.setObjectName("AutoDO_gaslabel")
@@ -1317,7 +1317,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.AutoDO_O2label = QtWidgets.QLabel(self.layoutWidget1)
         self.AutoDO_O2label.setMinimumSize(QtCore.QSize(90, 25))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.AutoDO_O2label.setFont(font)
         self.AutoDO_O2label.setAlignment(QtCore.Qt.AlignCenter)
         self.AutoDO_O2label.setObjectName("AutoDO_O2label")
@@ -1325,7 +1325,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.AutoDO_O2value = QtWidgets.QDoubleSpinBox(self.layoutWidget1)
         self.AutoDO_O2value.setMinimumSize(QtCore.QSize(90, 25))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.AutoDO_O2value.setFont(font)
         self.AutoDO_O2value.setStyleSheet("QDoubleSpinBox::up-button\n"
 " {subcontrol-origin:border;\n"
@@ -1347,7 +1347,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.AutoDO_gasswitch = QtWidgets.QPushButton(self.layoutWidget1)
         self.AutoDO_gasswitch.setMinimumSize(QtCore.QSize(60, 30))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.AutoDO_gasswitch.setFont(font)
         self.AutoDO_gasswitch.setStyleSheet("QPushButton\n"
 "{\n"
@@ -1370,30 +1370,30 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         
 #feed pump window
         self.Feed_Pump = QtWidgets.QWidget()
-        self.Feed_Pump.setGeometry(QtCore.QRect(0, 0, 310, 161))##
+        self.Feed_Pump.setGeometry(QtCore.QRect(0, 0, 310, 171))##
         self.Feed_Pump.setObjectName("Feed_Pump")
         self.AutoDOFrame_2 = QtWidgets.QFrame(self.Feed_Pump)
-        self.AutoDOFrame_2.setGeometry(QtCore.QRect(10, 0, 310, 161))##
+        self.AutoDOFrame_2.setGeometry(QtCore.QRect(10, 0, 310, 171))##
         self.AutoDOFrame_2.setStyleSheet("")
         self.AutoDOFrame_2.setObjectName("AutoDOFrame_2")
         self.gridLayout_7 = QtWidgets.QGridLayout(self.AutoDOFrame_2)
         self.gridLayout_7.setObjectName("gridLayout_7")
         self.FeedPumpbox = QtWidgets.QGroupBox(self.AutoDOFrame_2)
-        self.FeedPumpbox.setMinimumSize(QtCore.QSize(240, 70))
+        self.FeedPumpbox.setMinimumSize(QtCore.QSize(240, 80))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.FeedPumpbox.setFont(font)
         self.FeedPumpbox.setAlignment(QtCore.Qt.AlignCenter)
         self.FeedPumpbox.setObjectName("FeedPumpbox")
         self.horizontalLayoutWidget_5 = QtWidgets.QWidget(self.FeedPumpbox)
-        self.horizontalLayoutWidget_5.setGeometry(QtCore.QRect(80, 20, 121, 41))##
+        self.horizontalLayoutWidget_5.setGeometry(QtCore.QRect(80, 20, 121, 51))##
         self.horizontalLayoutWidget_5.setObjectName("horizontalLayoutWidget_5")
         self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_5)
         self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
         self.FeedPump_switchlabel1 = QtWidgets.QLabel(self.horizontalLayoutWidget_5)
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.FeedPump_switchlabel1.setFont(font)
         self.FeedPump_switchlabel1.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.FeedPump_switchlabel1.setObjectName("FeedPump_switchlabel1")
@@ -1418,7 +1418,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.horizontalLayout_5.addWidget(self.FeedPump_switch)
         self.FeedPump_switchlabel2 = QtWidgets.QLabel(self.horizontalLayoutWidget_5)
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.FeedPump_switchlabel2.setFont(font)
         self.FeedPump_switchlabel2.setObjectName("FeedPump_switchlabel2")
         self.horizontalLayout_5.addWidget(self.FeedPump_switchlabel2)
@@ -1428,7 +1428,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.RPM_label = QtWidgets.QLabel(self.AutoDOFrame_2)
         self.RPM_label.setMinimumSize(QtCore.QSize(90, 25))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.RPM_label.setFont(font)
         self.RPM_label.setAlignment(QtCore.Qt.AlignCenter)
         self.RPM_label.setObjectName("RPM_label")
@@ -1437,7 +1437,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.RPM_value = QtWidgets.QDoubleSpinBox(self.AutoDOFrame_2)
         self.RPM_value.setMinimumSize(QtCore.QSize(90, 25))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.RPM_value.setFont(font)
         self.RPM_value.setStyleSheet("QDoubleSpinBox::up-button\n"
 " {subcontrol-origin:border;\n"
@@ -1460,30 +1460,30 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         
 #acid base pump window
         self.Acid_Base_Pump = QtWidgets.QWidget()
-        self.Acid_Base_Pump.setGeometry(QtCore.QRect(0, 0, 310, 161))##
+        self.Acid_Base_Pump.setGeometry(QtCore.QRect(0, 0, 310, 171))##
         self.Acid_Base_Pump.setObjectName("Acid_Base_Pump")
         self.AutoDOFrame_3 = QtWidgets.QFrame(self.Acid_Base_Pump)
-        self.AutoDOFrame_3.setGeometry(QtCore.QRect(10, 0, 310, 161))##
+        self.AutoDOFrame_3.setGeometry(QtCore.QRect(10, 0, 310, 171))##
         self.AutoDOFrame_3.setStyleSheet("")
         self.AutoDOFrame_3.setObjectName("AutoDOFrame_3")
         self.gridLayout_9 = QtWidgets.QGridLayout(self.AutoDOFrame_3)
         self.gridLayout_9.setObjectName("gridLayout_9")
         self.DosingBox = QtWidgets.QGroupBox(self.AutoDOFrame_3)
-        self.DosingBox.setMinimumSize(QtCore.QSize(240, 70))
+        self.DosingBox.setMinimumSize(QtCore.QSize(240, 80))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.DosingBox.setFont(font)
         self.DosingBox.setAlignment(QtCore.Qt.AlignCenter)
         self.DosingBox.setObjectName("DosingBox")
         self.horizontalLayoutWidget_6 = QtWidgets.QWidget(self.DosingBox)
-        self.horizontalLayoutWidget_6.setGeometry(QtCore.QRect(80, 20, 121, 41))##
+        self.horizontalLayoutWidget_6.setGeometry(QtCore.QRect(80, 20, 121, 51))##
         self.horizontalLayoutWidget_6.setObjectName("horizontalLayoutWidget_6")
         self.horizontalLayout_6 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_6)
         self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_6.setObjectName("horizontalLayout_6")
         self.Dosing_switchlabel1 = QtWidgets.QLabel(self.horizontalLayoutWidget_6)
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.Dosing_switchlabel1.setFont(font)
         self.Dosing_switchlabel1.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.Dosing_switchlabel1.setObjectName("Dosing_switchlabel1")
@@ -1508,12 +1508,12 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.horizontalLayout_6.addWidget(self.Dosing_switch)
         self.Dosing_switchlabel2 = QtWidgets.QLabel(self.horizontalLayoutWidget_6)
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.Dosing_switchlabel2.setFont(font)
         self.Dosing_switchlabel2.setObjectName("Dosing_switchlabel2")
         self.horizontalLayout_6.addWidget(self.Dosing_switchlabel2)
         self.layoutWidget_3 = QtWidgets.QWidget(self.DosingBox)
-        self.layoutWidget_3.setGeometry(QtCore.QRect(5, 70, 275, 64))##
+        self.layoutWidget_3.setGeometry(QtCore.QRect(5, 70, 275, 74))##
         self.layoutWidget_3.setObjectName("layoutWidget_3")
         self.gridLayout_10 = QtWidgets.QGridLayout(self.layoutWidget_3)
         self.gridLayout_10.setContentsMargins(0, 0, 0, 0)
@@ -1521,7 +1521,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.Base_timevalue = QtWidgets.QDoubleSpinBox(self.layoutWidget_3)
         self.Base_timevalue.setMinimumSize(QtCore.QSize(100, 25))##
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.Base_timevalue.setFont(font)
         self.Base_timevalue.setStyleSheet("QDoubleSpinBox::up-button\n"
 " {subcontrol-origin:border;\n"
@@ -1543,7 +1543,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.Acid_timelabel = QtWidgets.QLabel(self.layoutWidget_3)
         self.Acid_timelabel.setMinimumSize(QtCore.QSize(100, 25))##
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.Acid_timelabel.setFont(font)
         self.Acid_timelabel.setAlignment(QtCore.Qt.AlignCenter)
         self.Acid_timelabel.setObjectName("Acid_timelabel")
@@ -1551,7 +1551,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.Base_timelabel = QtWidgets.QLabel(self.layoutWidget_3)
         self.Base_timelabel.setMinimumSize(QtCore.QSize(100, 25))##
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.Base_timelabel.setFont(font)
         self.Base_timelabel.setAlignment(QtCore.Qt.AlignCenter)
         self.Base_timelabel.setObjectName("Base_timelabel")
@@ -1559,7 +1559,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.Acid_timevalue = QtWidgets.QDoubleSpinBox(self.layoutWidget_3)
         self.Acid_timevalue.setMinimumSize(QtCore.QSize(100, 25))##
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.Acid_timevalue.setFont(font)
         self.Acid_timevalue.setStyleSheet("QDoubleSpinBox::up-button\n"
 " {subcontrol-origin:border;\n"
@@ -1581,16 +1581,16 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.gridLayout_9.addWidget(self.DosingBox, 0, 0, 1, 2)
         self.Automatic_Pump.addItem(self.Acid_Base_Pump, "")
         
-#pic comment(acid and base time)
+#pic comment (acid and base time)
         self.formLayoutWidget = QtWidgets.QWidget(self.Main)
-        self.formLayoutWidget.setGeometry(QtCore.QRect(640, 305, 170, 210))##
+        self.formLayoutWidget.setGeometry(QtCore.QRect(600, 305, 210, 210))##size
         self.formLayoutWidget.setObjectName("formLayoutWidget")
         self.formLayout = QtWidgets.QFormLayout(self.formLayoutWidget)
         self.formLayout.setContentsMargins(0, 0, 0, 0)
         self.formLayout.setObjectName("formLayout")
         self.Bioreactor_pic_acid = QtWidgets.QRadioButton(self.formLayoutWidget)
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.Bioreactor_pic_acid.setFont(font)
         self.Bioreactor_pic_acid.setLayoutDirection(QtCore.Qt.RightToLeft)
         self.Bioreactor_pic_acid.setAutoRepeat(True)
@@ -1599,7 +1599,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.formLayout.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.Bioreactor_pic_acid)
         self.acid_time = QtWidgets.QTimeEdit(self.formLayoutWidget)
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.acid_time.setFont(font)
         self.acid_time.setStyleSheet("background-color:rgba(0,0,0,0);\n"
 "border-color:rgba(111,111,170,255);\n"
@@ -1617,7 +1617,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.formLayout.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.acid_time)
         self.Bioreactor_pic_base = QtWidgets.QRadioButton(self.formLayoutWidget)
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.Bioreactor_pic_base.setFont(font)
         self.Bioreactor_pic_base.setLayoutDirection(QtCore.Qt.RightToLeft)
         self.Bioreactor_pic_base.setAutoRepeat(True)
@@ -1629,7 +1629,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.formLayout.setItem(4, QtWidgets.QFormLayout.FieldRole, spacerItem8)
         self.Bioreactor_pic_heating = QtWidgets.QRadioButton(self.formLayoutWidget)
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.Bioreactor_pic_heating.setFont(font)
         self.Bioreactor_pic_heating.setLayoutDirection(QtCore.Qt.RightToLeft)
         self.Bioreactor_pic_heating.setAutoRepeat(True)
@@ -1638,7 +1638,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.formLayout.setWidget(5, QtWidgets.QFormLayout.FieldRole, self.Bioreactor_pic_heating)
         self.Bioreactor_pic_cooling = QtWidgets.QRadioButton(self.formLayoutWidget)
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.Bioreactor_pic_cooling.setFont(font)
         self.Bioreactor_pic_cooling.setLayoutDirection(QtCore.Qt.RightToLeft)
         self.Bioreactor_pic_cooling.setAutoRepeat(True)
@@ -1647,7 +1647,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.formLayout.setWidget(7, QtWidgets.QFormLayout.FieldRole, self.Bioreactor_pic_cooling)
         self.base_time = QtWidgets.QTimeEdit(self.formLayoutWidget)
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.base_time.setFont(font)
         self.base_time.setStyleSheet("background-color:rgba(0,0,0,0);\n"
 "border-color:rgba(111,111,170,255);\n"
@@ -1662,14 +1662,15 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.base_time.setCalendarPopup(False)
         self.base_time.setObjectName("base_time")
         self.formLayout.setWidget(3, QtWidgets.QFormLayout.LabelRole, self.base_time)
-        #spacerItem9 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        #self.formLayout.setItem(2, QtWidgets.QFormLayout.FieldRole, spacerItem9)
+        
+        # spacerItem9 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        # self.formLayout.setItem(2, QtWidgets.QFormLayout.FieldRole, spacerItem9)
         
         #space between heating and cooling
         spacerItem10 = QtWidgets.QSpacerItem(20, 35, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)##
         self.formLayout.setItem(6, QtWidgets.QFormLayout.FieldRole, spacerItem10)
         
-#pic comment (pH pO2...)        
+#pic comment (pH pO2...)
         self.verticalLayoutWidget_2 = QtWidgets.QWidget(self.Main)
         self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(1150, 410, 131, 335))##380->410
         self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
@@ -1678,14 +1679,14 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.verticalLayout_4.setObjectName("verticalLayout_4")
         self.biopic_pHlabel = QtWidgets.QLabel(self.verticalLayoutWidget_2)
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.biopic_pHlabel.setFont(font)
         self.biopic_pHlabel.setAlignment(QtCore.Qt.AlignCenter)
         self.biopic_pHlabel.setObjectName("biopic_pHlabel")
         self.verticalLayout_4.addWidget(self.biopic_pHlabel)
         self.biopic_pHvalue = QtWidgets.QDoubleSpinBox(self.verticalLayoutWidget_2)
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.biopic_pHvalue.setFont(font)
         self.biopic_pHvalue.setStyleSheet("background-color:rgba(0,0,0,0);\n"
 "border-color:rgba(111,111,170,255);\n"
@@ -1703,14 +1704,14 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.verticalLayout_4.addItem(spacerItem11)
         self.biopic_pO2label = QtWidgets.QLabel(self.verticalLayoutWidget_2)
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.biopic_pO2label.setFont(font)
         self.biopic_pO2label.setAlignment(QtCore.Qt.AlignCenter)
         self.biopic_pO2label.setObjectName("biopic_pO2label")
         self.verticalLayout_4.addWidget(self.biopic_pO2label)
         self.biopic_pO2value = QtWidgets.QDoubleSpinBox(self.verticalLayoutWidget_2)
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.biopic_pO2value.setFont(font)
         self.biopic_pO2value.setStyleSheet("background-color:rgba(0,0,0,0);\n"
 "border-color:rgba(111,111,170,255);\n"
@@ -1728,14 +1729,14 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.verticalLayout_4.addItem(spacerItem12)
         self.biopic_templabel = QtWidgets.QLabel(self.verticalLayoutWidget_2)
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.biopic_templabel.setFont(font)
         self.biopic_templabel.setAlignment(QtCore.Qt.AlignCenter)
         self.biopic_templabel.setObjectName("biopic_templabel")
         self.verticalLayout_4.addWidget(self.biopic_templabel)
         self.biopic_tempvalue = QtWidgets.QDoubleSpinBox(self.verticalLayoutWidget_2)
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.biopic_tempvalue.setFont(font)
         self.biopic_tempvalue.setStyleSheet("background-color:rgba(0,0,0,0);\n"
 "border-color:rgba(111,111,170,255);\n"
@@ -1756,14 +1757,14 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         
         self.biopic_pressurelabel = QtWidgets.QLabel(self.verticalLayoutWidget_2)
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.biopic_pressurelabel.setFont(font)
         self.biopic_pressurelabel.setAlignment(QtCore.Qt.AlignCenter)
         self.biopic_pressurelabel.setObjectName("biopic_pressurelabel")
         self.verticalLayout_4.addWidget(self.biopic_pressurelabel)
         self.biopic_pressurevalue = QtWidgets.QDoubleSpinBox(self.verticalLayoutWidget_2)
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.biopic_pressurevalue.setFont(font)
         self.biopic_pressurevalue.setStyleSheet("background-color:rgba(0,0,0,0);\n"
 "border-color:rgba(111,111,170,255);\n"
@@ -1781,7 +1782,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.device_box.setGeometry(QtCore.QRect(1410, 740, 131, 41))
         self.device_box.setMaximumSize(QtCore.QSize(131, 41))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         font.setPointSize(15)
         self.device_box.setFont(font)
         self.device_box.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
@@ -1820,7 +1821,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.O2minmaxflow_value = QtWidgets.QDoubleSpinBox(self.gridLayoutWidget)
         self.O2minmaxflow_value.setMinimumSize(QtCore.QSize(90, 30))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.O2minmaxflow_value.setFont(font)
         self.O2minmaxflow_value.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "border-color:rgba(111,111,170,255);\n"
@@ -1839,7 +1840,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.Airlimit_button = QtWidgets.QPushButton(self.gridLayoutWidget)
         self.Airlimit_button.setMinimumSize(QtCore.QSize(90, 40))##
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.Airlimit_button.setFont(font)
         self.Airlimit_button.setCheckable(True)
         self.Airlimit_button.setAutoRepeat(True)
@@ -1853,7 +1854,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.othergas_button = QtWidgets.QPushButton(self.gridLayoutWidget)
         self.othergas_button.setMinimumSize(QtCore.QSize(90, 40))##
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.othergas_button.setFont(font)
         self.othergas_button.setCheckable(True)
         self.othergas_button.setAutoRepeat(True)
@@ -1867,7 +1868,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.N2_button = QtWidgets.QPushButton(self.gridLayoutWidget)
         self.N2_button.setMinimumSize(QtCore.QSize(90, 40))##
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.N2_button.setFont(font)
         self.N2_button.setCheckable(True)
         self.N2_button.setAutoRepeat(True)
@@ -1879,9 +1880,9 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         
         #O2flow_label
         self.O2flow_label = QtWidgets.QLabel(self.gridLayoutWidget)
-        self.O2flow_label.setMaximumSize(QtCore.QSize(100, 15))##
+        self.O2flow_label.setMaximumSize(QtCore.QSize(1000, 15))##
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.O2flow_label.setFont(font)
         self.O2flow_label.setAlignment(QtCore.Qt.AlignCenter)
         self.O2flow_label.setObjectName("O2flow_label")
@@ -1891,7 +1892,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.O2limit_button = QtWidgets.QPushButton(self.gridLayoutWidget)
         self.O2limit_button.setMinimumSize(QtCore.QSize(90, 40))##
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.O2limit_button.setFont(font)
         self.O2limit_button.setCheckable(True)
         self.O2limit_button.setAutoRepeat(True)
@@ -1903,9 +1904,9 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         
         #Air_MinMaxlabel
         self.Air_MinMaxlabel = QtWidgets.QLabel(self.gridLayoutWidget)
-        self.Air_MinMaxlabel.setMaximumSize(QtCore.QSize(80, 15))##
+        self.Air_MinMaxlabel.setMaximumSize(QtCore.QSize(800, 15))##
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.Air_MinMaxlabel.setFont(font)
         self.Air_MinMaxlabel.setAlignment(QtCore.Qt.AlignCenter)
         self.Air_MinMaxlabel.setObjectName("Air_MinMaxlabel")
@@ -1913,18 +1914,18 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         
         #Airflow_label
         self.Airflow_label = QtWidgets.QLabel(self.gridLayoutWidget)
-        self.Airflow_label.setMaximumSize(QtCore.QSize(100, 15))##
+        self.Airflow_label.setMaximumSize(QtCore.QSize(1000, 15))##
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.Airflow_label.setFont(font)
         self.Airflow_label.setObjectName("Airflow_label")
         self.gridLayout_4.addWidget(self.Airflow_label, 3, 2, 1, 1)##
         
         #O2minmax_label
         self.O2minmax_label = QtWidgets.QLabel(self.gridLayoutWidget)
-        self.O2minmax_label.setMaximumSize(QtCore.QSize(80, 15))##
+        self.O2minmax_label.setMaximumSize(QtCore.QSize(800, 15))##
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.O2minmax_label.setFont(font)
         self.O2minmax_label.setAlignment(QtCore.Qt.AlignCenter)
         self.O2minmax_label.setObjectName("O2minmax_label")
@@ -1948,7 +1949,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.Airminmaxflow_value = QtWidgets.QDoubleSpinBox(self.gridLayoutWidget)
         self.Airminmaxflow_value.setMinimumSize(QtCore.QSize(90, 30))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        #font.setFamily("Arial")
         self.Airminmaxflow_value.setFont(font)
         self.Airminmaxflow_value.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "border-color:rgba(111,111,170,255);\n"
@@ -1963,10 +1964,12 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.Airminmaxflow_value.setObjectName("Airminmaxflow_value")
         self.gridLayout_4.addWidget(self.Airminmaxflow_value, 4, 2, 1, 1)##
         
+        #cellexus picture
         self.cellexuspic = QtWidgets.QLabel(self.Main)
-        self.cellexuspic.setGeometry(QtCore.QRect(10, 690, 511, 111))
+        self.cellexuspic.setGeometry(QtCore.QRect(1020, 25, 300, 80))##
         self.cellexuspic.setText("")
         self.cellexuspic.setObjectName("cellexuspic")
+        
         self.Bioreactor_pic.raise_()
         self.horizontalLayoutWidget.raise_()
         self.setpointBox.raise_()
@@ -2914,7 +2917,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.actionOpen.setText(_translate("Cellexus_CellMaker", "Open"))
         self.actionSave.setText(_translate("Cellexus_CellMaker", "Save"))
         self.actionExit.setText(_translate("Cellexus_CellMaker", "Exit"))
-       
+
         self.checkBoxTemp.setText(_translate("Cellexus_CellMaker", "Temperature - Red"))
         self.checkBoxPres.setText(_translate("Cellexus_CellMaker", "Pressure - Orange"))
         self.checkBoxPH.setText(_translate("Cellexus_CellMaker", "pH - Yellow"))
@@ -3086,6 +3089,10 @@ if __name__ == "__main__":
     #bioreactor picture in main tab
     ui.Bioreactor_pic.setPixmap(QPixmap('image/bio.png'))
     ui.Bioreactor_pic.setScaledContents(True)
+    
+    ui.cellexuspic.setPixmap(QPixmap('image/cellexuslogo.png'))###
+    ui.cellexuspic.setScaledContents(True)###
+    
     #Setpoint=[Temp_setpoint, Press_setpoint, O2flow_setpoint, Airflow_setpoint, pH_setpoint, pO2_setpoint,]
     
     #alarm function
