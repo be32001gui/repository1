@@ -2998,7 +2998,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
             
     # other functions in the class here
 
-    def browsefiles_1(self):
+    def browsefiles(self):
         fname = QFileDialog.getSaveFileName(self, 'Open File', 'D:\Documents')  
         
     def cleargraph(self):
@@ -3075,7 +3075,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
             self.widget1.plot(x, y, pen=pen)
             
     #manual log tab browse files     
-    def browsefiles(self):
+    def browsefiles_1(self):
         fname = QFileDialog.getOpenFileName(self, 'Open File', 'D:\Documents')
 
 
