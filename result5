@@ -182,9 +182,9 @@ class varPopUp(QDialog):
         # Setting up Ramp Type ComboBox
         self.rampTypeBox = QComboBox()
         if content == "Feed Pump":
-            self.rampTypeBox.addItems(["Linear", "Exponential"])
+            self.rampTypeBox.addItems(["Instant", "Linear", "Exponential"])
         else: 
-            self.rampTypeBox.addItems(["Linear"])
+            self.rampTypeBox.addItems(["Instant"])
         # self.rampType = str(self.rampTypeBox.currentText())
         # print("current ramp type = ", self.rampType)
         
@@ -405,14 +405,15 @@ class MyTable(QTableWidget):
             self.setItem(row, column+1, iniValItem)
             self.setItem(row, column+2, finValItem)
             self.setItem(row, column+3, rampTypeItem)
-            
+               
             if content == "Feed Pump":
-                rampPeriod = varDialog.rampPeriodBox.value()
-                rampPeriodItem = QTableWidgetItem(str(rampPeriod))
-                self.setItem(row, column+4, rampPeriodItem)
                 
                 # equation from https://stackoverflow.com/questions/21565994/method-to-return-the-equation-of-a-straight-line-given-two-points
                 if varDialog.rampTypeBox.currentText() == "Linear":
+                    rampPeriod = varDialog.rampPeriodBox.value()
+                    rampPeriodItem = QTableWidgetItem(str(rampPeriod))
+                    self.setItem(row, column+4, rampPeriodItem)
+                
                     initialX = time
                     print("initialX = ", initialX)
                     initialY = iniVal
@@ -435,6 +436,10 @@ class MyTable(QTableWidget):
                     
                 # equation from https://svitla.com/blog/approximation-data-by-exponential-function-on-python     
                 elif varDialog.rampTypeBox.currentText() == "Exponential":
+                    rampPeriod = varDialog.rampPeriodBox.value()
+                    rampPeriodItem = QTableWidgetItem(str(rampPeriod))
+                    self.setItem(row, column+4, rampPeriodItem)
+                    
                     initialX = time
                     print("initialX = ", initialX)
                     initialY = iniVal
@@ -455,11 +460,13 @@ class MyTable(QTableWidget):
                     rampEquationItem = QTableWidgetItem(expEquation)
                     self.setItem(row, column+5, rampEquationItem)
                     
-                else:
-                    pass
+                else: # means text inside is instant
+                    rampPeriodItem = QTableWidgetItem("0.000")
+                    self.setItem(row, column+4, rampPeriodItem)
                 
             else:
-                pass
+                rampPeriodItem = QTableWidgetItem("0.000")
+                self.setItem(row, column+4, rampPeriodItem)
             
             # self.setSortingEnabled(True)
             
