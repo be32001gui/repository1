@@ -1,18 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Apr 29 11:00:41 2021
-
-@author: ASUS
-"""
-
-
-# -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'F:\BE32001\pythonProject\alarm.ui'
-#
 # Created by: PyQt5 UI code generator 5.9.2
-#
-# WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QApplication, QDialog, QFileDialog
@@ -20,6 +7,16 @@ import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import QPixmap
 import os.path
+import base64
+from on_png import img as on
+from off_png import img as off
+from bio_png import img as bio
+from button_on_png import img as button_on
+from button_off_png import img as button_off
+from cellexuslogo_png import img as cellexuslogo
+from red_jpg import img as red
+from grey_jpg import img as grey
+
 import matplotlib
 matplotlib.use('QT5Agg')
 import matplotlib.pyplot as plt 
@@ -34,7 +31,6 @@ from numpy.linalg import lstsq
 import numpy
 from scipy.optimize import curve_fit
 import matplotlib.pyplot as plt
-from PyQt5 import QtCore, QtGui, QtWidgets 
 from PyQt5.QtCore import    (Qt, QMimeData, pyqtSignal, QObject,
                              QDir, QRect
                              )
@@ -51,11 +47,37 @@ from PyQt5.QtWidgets import (QProxyStyle,QStyleOption,
                             QFileDialog,
                             QApplication)
 
+tmp1 = open('on.png', 'wb')          #Create temporary file
+tmp1.write(base64.b64decode(on))    ##Decode the image and write it into the file
+tmp1.close()
 
-CURRENT_DIRECTORY = os.path.dirname(os.path.realpath(__file__))
-red = os.path.join(CURRENT_DIRECTORY, "image/red.jpg")
-grey = os.path.join(CURRENT_DIRECTORY, "image/grey.jpg")
+tmp2 = open('off.png', 'wb')          #Create temporary file
+tmp2.write(base64.b64decode(off))    ##Decode the image and write it into the file
+tmp2.close()
 
+tmp3 = open('button_on.png', 'wb')          #Create temporary file
+tmp3.write(base64.b64decode(button_on))    ##Decode the image and write it into the file
+tmp3.close()
+
+tmp4 = open('button_off.png', 'wb')          #Create temporary file
+tmp4.write(base64.b64decode(button_off))    ##Decode the image and write it into the file
+tmp4.close()
+
+tmp5 = open('bio.png', 'wb')          #Create temporary file
+tmp5.write(base64.b64decode(bio))    ##Decode the image and write it into the file
+tmp5.close()
+
+tmp6 = open('cellexuslogo.png', 'wb')          #Create temporary file
+tmp6.write(base64.b64decode(cellexuslogo))    ##Decode the image and write it into the file
+tmp6.close()
+
+tmp7 = open('red.jpg', 'wb')          #Create temporary file
+tmp7.write(base64.b64decode(red))    ##Decode the image and write it into the file
+tmp7.close()
+
+tmp8 = open('grey.jpg', 'wb')          #Create temporary file
+tmp8.write(base64.b64decode(grey))    ##Decode the image and write it into the file
+tmp8.close()
 
 class varPopUp(QDialog):
     # defining the custom pop up winow inherits
@@ -767,7 +789,6 @@ class recipePage(QWidget):
                             row_data.append('')
                     writer.writerow(row_data)
 
-
 class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
     def setupUi(self, Cellexus_CellMaker):
         Cellexus_CellMaker.setObjectName("Cellexus_CellMaker")
@@ -900,12 +921,12 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.horizontalLayout.addWidget(self.alarmbox)
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem)
-        self.mode_Box = QtWidgets.QGroupBox(self.horizontalLayoutWidget)
-        self.mode_Box.setMinimumSize(QtCore.QSize(320, 100))
-        #self.mode_Box.setStyleSheet("background-color: rgb(247, 247, 247);")
-        self.mode_Box.setTitle("")
-        self.mode_Box.setObjectName("mode_Box")
-        self.horizontalLayoutWidget_3 = QtWidgets.QWidget(self.mode_Box)
+        self.modeBox = QtWidgets.QGroupBox(self.horizontalLayoutWidget)
+        self.modeBox.setMinimumSize(QtCore.QSize(320, 100))
+        #self.modeBox.setStyleSheet("background-color: rgb(247, 247, 247);")
+        self.modeBox.setTitle("")
+        self.modeBox.setObjectName("modeBox")
+        self.horizontalLayoutWidget_3 = QtWidgets.QWidget(self.modeBox)
         self.horizontalLayoutWidget_3.setGeometry(QtCore.QRect(20, 10, 278, 80))
         self.horizontalLayoutWidget_3.setObjectName("horizontalLayoutWidget_3")
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_3)
@@ -963,12 +984,12 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.Run.setFlat(True)
         self.Run.setObjectName("Run")
         #button icon set
-        self.Run.setStyleSheet("QPushButton{border-image: url(image/button_off.png)}")##
-        # self.Run.setIcon(QtGui.QIcon('image\button_off.png'))###set icon need\ set picture need/
+        self.Run.setStyleSheet("QPushButton{border-image: url(button_off.png)}")##
+        # self.Run.setIcon(QtGui.QIcon('button_off.png'))###set icon need\ set picture need/
         # self.Run.setIconSize(QtCore.QSize(120,35))##
         
         self.horizontalLayout_3.addWidget(self.Run)
-        self.horizontalLayout.addWidget(self.mode_Box)
+        self.horizontalLayout.addWidget(self.modeBox)
         spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem2)
         
@@ -1193,8 +1214,8 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.acid_button.setAutoDefault(True)
         self.acid_button.setObjectName("acid_button")
         #button icon set
-        self.acid_button.setStyleSheet("QPushButton{border-image: url(image/button_off.png)}")##
-        # self.acid_button.setIcon(QtGui.QIcon('image\button_off.png'))###set icon need\ set picture need/
+        self.acid_button.setStyleSheet("QPushButton{border-image: url(button_off.png)}")##
+        # self.acid_button.setIcon(QtGui.QIcon('button_off.png'))###set icon need\ set picture need/
         # self.acid_button.setIconSize(QtCore.QSize(90,25))##
         self.gridLayout_2.addWidget(self.acid_button, 1, 0, 1, 1)
         
@@ -1210,8 +1231,8 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.base_button.setAutoDefault(True)
         self.base_button.setObjectName("base_button")
         #button icon set
-        self.base_button.setStyleSheet("QPushButton{border-image: url(image/button_off.png)}")##
-        # self.base_button.setIcon(QtGui.QIcon('image\button_off.png'))###set icon need\ set picture need/
+        self.base_button.setStyleSheet("QPushButton{border-image: url(button_off.png)}")##
+        # self.base_button.setIcon(QtGui.QIcon('button_off.png'))###set icon need\ set picture need/
         # self.base_button.setIconSize(QtCore.QSize(90,25))##
         self.gridLayout_2.addWidget(self.base_button, 2, 0, 1, 1)
         
@@ -1270,7 +1291,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.AutopH_switch.setObjectName("AutopH_switch")
         
         #button icon set
-        self.AutopH_switch.setIcon(QtGui.QIcon('image\off.png'))###set icon need\ set picture need/
+        self.AutopH_switch.setIcon(QtGui.QIcon('off.png'))###set icon need\ set picture need/
         self.AutopH_switch.setIconSize(QtCore.QSize(50,50))##
         
         self.horizontalLayout_2.addWidget(self.AutopH_switch)
@@ -1327,7 +1348,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.AutoDO_switch.setObjectName("AutoDO_switch")
         
         #button icon set
-        self.AutoDO_switch.setIcon(QtGui.QIcon('image\off.png'))###set icon need\ set picture need/
+        self.AutoDO_switch.setIcon(QtGui.QIcon('off.png'))###set icon need\ set picture need/
         self.AutoDO_switch.setIconSize(QtCore.QSize(50,50))##
         
         self.horizontalLayout_4.addWidget(self.AutoDO_switch)
@@ -1400,7 +1421,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.AutoDO_gasswitch.setObjectName("AutoDO_gasswitch")
         
         #button icon set
-        self.AutoDO_gasswitch.setIcon(QtGui.QIcon('image\off.png'))###set icon need\ set picture need/
+        self.AutoDO_gasswitch.setIcon(QtGui.QIcon('off.png'))###set icon need\ set picture need/
         self.AutoDO_gasswitch.setIconSize(QtCore.QSize(50,50))##
         
         self.gridLayout_6.addWidget(self.AutoDO_gasswitch, 2, 2, 1, 1)
@@ -1451,7 +1472,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.FeedPump_switch.setObjectName("FeedPump_switch")
         
         #button icon set
-        self.FeedPump_switch.setIcon(QtGui.QIcon('image\off.png'))###set icon need\ set picture need/
+        self.FeedPump_switch.setIcon(QtGui.QIcon('off.png'))###set icon need\ set picture need/
         self.FeedPump_switch.setIconSize(QtCore.QSize(50,50))##
         
         self.horizontalLayout_5.addWidget(self.FeedPump_switch)
@@ -1541,7 +1562,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.Dosing_switch.setObjectName("Dosing_switch")
         
         #button icon set
-        self.Dosing_switch.setIcon(QtGui.QIcon('image\off.png'))###set icon need\ set picture need/
+        self.Dosing_switch.setIcon(QtGui.QIcon('off.png'))###set icon need\ set picture need/
         self.Dosing_switch.setIconSize(QtCore.QSize(50,50))##
         
         self.horizontalLayout_6.addWidget(self.Dosing_switch)
@@ -1886,7 +1907,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.Airlimit_button.setAutoDefault(True)
         self.Airlimit_button.setFlat(True)
         self.Airlimit_button.setObjectName("Airlimit_button")
-        self.Airlimit_button.setStyleSheet("QPushButton{border-image: url(image/button_off.png)}")##
+        self.Airlimit_button.setStyleSheet("QPushButton{border-image: url(button_off.png)}")##
         self.gridLayout_4.addWidget(self.Airlimit_button, 4, 0, 1, 1)##
         
         #othergas_button
@@ -1900,7 +1921,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.othergas_button.setAutoDefault(True)
         self.othergas_button.setFlat(True)
         self.othergas_button.setObjectName("othergas_button")
-        self.othergas_button.setStyleSheet("QPushButton{border-image: url(image/button_off.png)}")##
+        self.othergas_button.setStyleSheet("QPushButton{border-image: url(button_off.png)}")##
         self.gridLayout_4.addWidget(self.othergas_button, 6, 0, 1, 1)##
         
         #N2_button
@@ -1914,7 +1935,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.N2_button.setAutoDefault(True)
         self.N2_button.setFlat(True)
         self.N2_button.setObjectName("N2_button")
-        self.N2_button.setStyleSheet("QPushButton{border-image: url(image/button_off.png)}")##
+        self.N2_button.setStyleSheet("QPushButton{border-image: url(button_off.png)}")##
         self.gridLayout_4.addWidget(self.N2_button, 8, 0, 1, 1)##
         
         #O2flow_label
@@ -1938,7 +1959,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.O2limit_button.setAutoDefault(True)
         self.O2limit_button.setFlat(True)
         self.O2limit_button.setObjectName("O2limit_button")
-        self.O2limit_button.setStyleSheet("QPushButton{border-image: url(image/button_off.png)}")##
+        self.O2limit_button.setStyleSheet("QPushButton{border-image: url(button_off.png)}")##
         self.gridLayout_4.addWidget(self.O2limit_button, 1, 0, 1, 1)##
         
         #Air_MinMaxlabel
@@ -2020,7 +2041,7 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
         self.cellexuspic.raise_()
         self.tab1.addTab(self.Main, "")
         
-        #charts tab
+   #charts tab
         self.Charts = QtWidgets.QWidget()
         self.Charts.setObjectName("Charts")
         self.tab1.addTab(self.Charts, "")
@@ -3148,22 +3169,18 @@ if __name__ == "__main__":
     widget.show()
     
     #bioreactor picture in main tab
-    ui.Bioreactor_pic.setPixmap(QPixmap('image/bio.png'))
+    ui.Bioreactor_pic.setPixmap(QPixmap('bio.png'))
     ui.Bioreactor_pic.setScaledContents(True)
     
-    ui.cellexuspic.setPixmap(QPixmap('image/cellexuslogo.png'))###
+    ui.cellexuspic.setPixmap(QPixmap('cellexuslogo.png'))###
     ui.cellexuspic.setScaledContents(True)###
     
     #Setpoint=[Temp_setpoint, Press_setpoint, O2flow_setpoint, Airflow_setpoint, pH_setpoint, pO2_setpoint,]
-    
     #alarm function
-    #it may too complex and edious, also need to improve and maybe put this function to another py document
-    #the led picture seems odd, also need some adjustment
     def ALARM(Temp_setpoint, Temp_measurement, Press_setpoint, Press_measurement, O2flow_setpoint, O2flow_measurement, Airflow_setpoint, Airflow_measurement, pH_setpoint, pH_measurement, pO2_setpoint, pO2_measurement):
         #clear the text
-        #ui.Temp_led.setText("")
-        red=QPixmap('image/red.jpg')
-        grey=QPixmap('image/grey.jpg')
+        red=QPixmap('red.jpg')
+        grey=QPixmap('grey.jpg')
         #decide if it needs a alarm on
         if Temp_measurement > Temp_setpoint :
             ui.Temp_led.setPixmap(red)
@@ -3206,3 +3223,5 @@ if __name__ == "__main__":
     ALARM(38,39,1,0,1,0,1,2,1,0,1,2)
     
     sys.exit(app.exec_())
+    os.remove('on.png', 'off.png', 'button_on.png', 'button_off.png', 'bio.png', 'cellexuslogo.png', 'red.jpg', 'grey.jpg') 
+    
