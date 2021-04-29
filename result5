@@ -523,40 +523,40 @@ class recipePage(QWidget):
         self.button1 = Button('Temperature', self)
         self.button1.setStyleSheet("QPushButton{border-image: url(button_off.png)}")##
         self.button1.clicked[bool].connect(self.bticon)#form->self, link to the change function
-        self.button1.setMinimumSize(QtCore.QSize(200, 50))
+        self.button1.setMinimumSize(QtCore.QSize(150, 50))
         self.button2 = Button('Air Pump', self)
         self.button2.setStyleSheet("QPushButton{border-image: url(button_off.png)}")##
         self.button2.clicked[bool].connect(self.bticon)#form->self, link to the change function
-        self.button2.setMinimumSize(QtCore.QSize(200, 50))
+        self.button2.setMinimumSize(QtCore.QSize(150, 50))
         self.button3 = Button('O2 Pump', self)
         self.button3.setStyleSheet("QPushButton{border-image: url(button_off.png)}")##
         self.button3.clicked[bool].connect(self.bticon)#form->self, link to the change function
-        self.button3.setMinimumSize(QtCore.QSize(200, 50))
+        self.button3.setMinimumSize(QtCore.QSize(150, 50))
         self.button4 = Button('pH', self)
         self.button4.setStyleSheet("QPushButton{border-image: url(button_off.png)}")##
         self.button4.clicked[bool].connect(self.bticon)#form->self, link to the change function
-        self.button4.setMinimumSize(QtCore.QSize(200, 50))
+        self.button4.setMinimumSize(QtCore.QSize(150, 50))
         self.button5 = Button('Dissolved O2', self)
         self.button5.setStyleSheet("QPushButton{border-image: url(button_off.png)}")##
         self.button5.clicked[bool].connect(self.bticon)#form->self, link to the change function
-        self.button5.setMinimumSize(QtCore.QSize(200, 50))
+        self.button5.setMinimumSize(QtCore.QSize(150, 50))
         self.button6 = Button('Feed Pump', self)
         self.button6.setStyleSheet("QPushButton{border-image: url(button_off.png)}")##
         self.button6.clicked[bool].connect(self.bticon)#form->self, link to the change function
-        self.button6.setMinimumSize(QtCore.QSize(200, 50))
+        self.button6.setMinimumSize(QtCore.QSize(150, 50))
         
         # setting up table
         self.table = MyTable(50,7,self)
         self.table.setHorizontalHeaderLabels(['Time Into Run', 'Variable', 
        'Initial Value', 'Final Value', 'Ramp Type', 'Ramp Period', 
        'Ramp Equation'])
-        self.table.setColumnWidth(0, 135)
-        self.table.setColumnWidth(1, 135)
+        self.table.setColumnWidth(0, 130)
+        self.table.setColumnWidth(1, 130)
         # self.table.setColumnWidth(2, 135)
         # self.table.setColumnWidth(3, 135)
         # self.table.setColumnWidth(4, 135)
-        # self.table.setColumnWidth(5, 135)
-        self.table.setColumnWidth(6, 228)
+        self.table.setColumnWidth(5, 130)
+        self.table.setColumnWidth(6, 218)
       
         # setting table to accept drop
         self.table.setAcceptDrops(True)
