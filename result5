@@ -3051,14 +3051,13 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
     def buttonon(self):
         #on picture when cilcked it
         button=self.sender()##sender() is used to judge which button was clicked
-        button.setStyleSheet("QPushButton{border-image: url(image/button_on.png)}")##
-       
+        button.setStyleSheet("QPushButton{border-image: url(button_on.png)}")##
+        
     def buttonoff(self):
         #off picture when clicked it again
         button=self.sender()
-        button.setStyleSheet("QPushButton{border-image: url(image/button_off.png)}")##
-        
-               
+        button.setStyleSheet("QPushButton{border-image: url(button_off.png)}")##
+
     def bticon(self,pressed):
         # when push the button
         if pressed:
@@ -3069,13 +3068,13 @@ class Ui_Cellexus_CellMaker(QDialog):#obiject->dialog
     def switchon(self):
         #on picture when cilcked it
         button=self.sender()##sender() is used to judge which button was clicked
-        button.setIcon(QtGui.QIcon('image\on.png'))##
+        button.setIcon(QtGui.QIcon('on.png'))##
         button.setIconSize(QtCore.QSize(50,50))##
         
     def switchoff(self):
         #off picture when clicked it again
         button=self.sender()
-        button.setIcon(QtGui.QIcon('image\off.png'))##
+        button.setIcon(QtGui.QIcon('off.png'))##
         button.setIconSize(QtCore.QSize(50,50))##   
                
     def swicon(self,pressed):
