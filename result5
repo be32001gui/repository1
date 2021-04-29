@@ -532,7 +532,8 @@ class recipePage(QWidget):
         self.saveButton.clicked.connect(self.saveSheet)
         self.sortButton = QPushButton("Sort")
         self.sortButton.clicked.connect(self.sortTableAscending)
-    
+        self.clearButton = QPushButton("Clear")
+        self.clearButton.clicked.connect(self.clearTable)
         
         
         """ Setpoint section """
@@ -669,6 +670,7 @@ class recipePage(QWidget):
         self.mainLayout.addWidget(self.saveButton,0,22,2,2)
         self.mainLayout.addWidget(self.table,2,0,24,24)
         self.mainLayout.addWidget(self.butWidget,6,26,16,3)
+        self.mainLayout.addWidget(self.clearButton,26,0,2,2)
         self.mainLayout.addWidget(self.sortButton,26,22,2,2)
         self.mainLayout.addWidget(self.spWidget,0,30,20,4)
         self.setLayout(self.mainLayout)
@@ -692,6 +694,9 @@ class recipePage(QWidget):
 
     def turnOffLights(self):
         print("RUN turned off")
+        
+    def clearTable(self):
+        self.table.clearContents()
         
     def openSheet(self):
         self.check_change = False
